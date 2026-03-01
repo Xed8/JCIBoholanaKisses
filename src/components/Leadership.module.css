@@ -5,7 +5,7 @@
 
 .header {
     text-align: center;
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
 }
 
 .header h2 {
@@ -13,32 +13,88 @@
     color: var(--jci-navy);
 }
 
+/* President Card */
+.presidentCard {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2.5rem 3rem;
+    background: linear-gradient(135deg, var(--jci-navy) 0%, #1a3a5c 100%);
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.presidentEmoji {
+    font-size: 4rem;
+    flex-shrink: 0;
+}
+
+.presidentInfo {
+    flex: 1;
+}
+
+.presidentName {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 0.3rem;
+}
+
+.presidentRole {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--jci-red);
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 4px 14px;
+    border-radius: var(--radius-full);
+    display: inline-block;
+}
+
+.presidentDesc {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Board Title */
+.boardTitle {
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--jci-navy);
+    margin-bottom: 2rem;
+}
+
+/* Board Grid */
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 16px;
 }
 
 .card {
     background: var(--bg-section);
-    padding: 2rem 1.5rem;
+    padding: 1.5rem 1rem;
     text-align: center;
     box-shadow: var(--shadow-sm);
     transition: all var(--transition-smooth);
 }
 
 .card:hover {
-    transform: translateY(-6px);
+    transform: translateY(-4px);
     box-shadow: var(--shadow-md);
 }
 
 .cardEmoji {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
 }
 
 .cardName {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     color: var(--jci-navy);
     margin-bottom: 0.3rem;
 }
@@ -46,18 +102,11 @@
 .cardRole {
     display: block;
     font-family: var(--font-heading);
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     color: var(--jci-red);
-    margin-bottom: 1rem;
-}
-
-.cardDesc {
-    font-size: 0.88rem;
-    line-height: 1.7;
-    color: var(--text-body);
 }
 
 /* Animations */
@@ -74,14 +123,18 @@
 
 @media (max-width: 968px) {
     .grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .presidentCard {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
     .grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 0 auto;
+        grid-template-columns: repeat(2, 1fr);
     }
 }

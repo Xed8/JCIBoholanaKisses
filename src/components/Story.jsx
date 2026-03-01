@@ -5,19 +5,29 @@ import styles from './Story.module.css';
 
 const milestones = [
     {
-        year: '2010',
+        year: '2009',
         title: 'Chapter Founded',
-        description: 'JCI Boholana Kisses was officially established on March 21, 2010, as a proudly all-women and LGBTQ++ inclusive chapter of JCI Philippines in Tagbilaran City, Bohol.',
+        description: 'JCI Boholana Kisses was founded on September 13, 2009, in Tagbilaran City — the first all-women and LGBTQ++ inclusive chapter in JCI Philippines.',
+    },
+    {
+        year: '2010',
+        title: 'Officially Chartered',
+        description: 'On March 21, 2010, JCI Boholana Kisses received its official charter from JCI Philippines, marking its formal recognition as a local chapter.',
+    },
+    {
+        year: '2024',
+        title: '44th VIEWCON Host',
+        description: 'The chapter hosted the prestigious 44th Visayas Area Conference (VIEWCON) in September 2024 — a major regional milestone showcasing Boholana leadership on the Visayas stage.',
     },
     {
         year: '2025',
         title: 'ON THE GO — VICTORIOUS',
-        description: 'Published the February 2025 Souvenir Issue of "ON THE GO Magazine" themed VICTORIOUS, celebrating years of community impact and chapter achievements.',
+        description: 'Published the February 2025 Souvenir Issue of "ON THE GO Magazine" themed VICTORIOUS, celebrating 16 years of community impact. Held the 16th Anniversary celebration at Sherwood Bay Resort.',
     },
     {
         year: '2026',
-        title: 'Leading the Visayas',
-        description: 'Joyce Trexie Marie Cambangay represents the chapter as the 2026 Region VII Local Skills Development Director. The chapter co-hosts the landmark VAWC webinar with 18+ JCI chapters nationwide.',
+        title: 'PRISTINE — Innovate Impact',
+        description: 'Under President Ma. Christine Torralba and the PRISTINE banner, the chapter co-hosts a landmark VAWC webinar with 18+ JCI chapters nationwide and leads regional skills development.',
     },
 ];
 
@@ -42,7 +52,7 @@ export default function Story() {
         <section className={styles.story} ref={sectionRef}>
             <div className="container">
                 <div className={styles.header}>
-                    <span className={`section-label ${styles.animateOnScroll}`}>Since 2010</span>
+                    <span className={`section-label ${styles.animateOnScroll}`}>Since 2009</span>
                     <h2 className={styles.animateOnScroll}>
                         Our <span style={{ color: 'var(--jci-red)' }}>Story</span>
                     </h2>

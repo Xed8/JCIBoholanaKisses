@@ -72,6 +72,56 @@
     margin-bottom: 1.5rem;
 }
 
+/* Corporate Partners */
+.corporateSection {
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.corporateTitle {
+    font-size: 1.1rem;
+    color: var(--jci-navy);
+    margin-bottom: 1.5rem;
+}
+
+.corporateGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.corporateCard {
+    background: var(--bg-section);
+    padding: 1.2rem;
+    border-radius: var(--radius-lg);
+    text-align: center;
+    border: 1px solid rgba(10, 25, 47, 0.06);
+    transition: all var(--transition-fast);
+}
+
+.corporateCard:hover {
+    border-color: var(--jci-red);
+    transform: translateY(-2px);
+}
+
+.corporateType {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--jci-red);
+    margin-bottom: 0.4rem;
+}
+
+.corporateName {
+    display: block;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--jci-navy);
+}
+
 /* Animations */
 .animateOnScroll {
     opacity: 0;
@@ -93,5 +143,9 @@
     .pill {
         font-size: 0.75rem;
         padding: 8px 16px;
+    }
+
+    .corporateGrid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

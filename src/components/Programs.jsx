@@ -11,20 +11,47 @@ const programs = [
     {
         image: cover2Img.src,
         title: 'JCI Discover & Explore',
-        description: 'New member orientation and leadership fundamentals program. Discover the JCI movement and explore your potential as a future leader through hands-on workshops.',
+        description: 'New member orientation and leadership fundamentals program. From knowing our purpose in JCI Discover to strengthening leadership and organizational management in JCI Explore.',
         tag: 'Leadership Training',
     },
     {
         image: cover1Img.src,
         title: 'Hearts in Bloom',
-        description: 'Our signature community outreach project bringing love and support to communities across Bohol — from feeding programs to donations, we bloom where we are planted.',
+        description: 'Our signature community outreach project — The Velvet Love Series. A Valentine\'s-themed fellowship and fundraising initiative in partnership with Brunched by Chill Pill Cafe.',
         tag: 'Community Outreach',
     },
     {
         image: coverImg.src,
         title: 'GABAY 2026',
-        description: 'Skills development and mentorship initiative representing our chapter in the Visayas regional competition. Supporting local skills development through dedicated programs.',
+        description: 'Regional leadership conference at Mezzo Hotel, Cebu City. LSDD Joyce Trexie Marie Cambangay represents our chapter in skills development at the Visayas level.',
         tag: 'Skills Development',
+    },
+];
+
+const additionalProjects = [
+    {
+        title: 'Sanitation for the Nation',
+        description: 'A community health and hygiene collaboration with JCI Manila, bringing sanitation awareness and resources to underserved communities.',
+        tag: 'Health & Hygiene',
+        icon: '🧼',
+    },
+    {
+        title: 'TABANG BOHOL',
+        description: 'Disaster response initiative mobilized following Typhoon Odette, providing relief goods, rebuilding support, and community aid across affected areas of Bohol.',
+        tag: 'Disaster Response',
+        icon: '🤲',
+    },
+    {
+        title: 'Kawayanihan 2.0',
+        description: 'An environmental sustainability project focused on conservation efforts and eco-friendly community initiatives in Bohol.',
+        tag: 'Environment',
+        icon: '🌿',
+    },
+    {
+        title: '44th VIEWCON',
+        description: 'JCI Boholana Kisses hosted the prestigious 44th Visayas Area Conference (VIEWCON) in September 2024 — a landmark regional event.',
+        tag: 'Regional Conference',
+        icon: '🏆',
     },
 ];
 
@@ -62,6 +89,7 @@ export default function Programs() {
             </div>
 
             <div className="container">
+                {/* Main project cards with images */}
                 <div className={styles.grid}>
                     {programs.map((program, index) => (
                         <div
@@ -92,6 +120,24 @@ export default function Programs() {
                     ))}
                 </div>
 
+                {/* Additional Projects — compact icon cards */}
+                <div className={styles.additionalGrid}>
+                    {additionalProjects.map((project, index) => (
+                        <div
+                            key={project.title}
+                            className={`card-rounded ${styles.additionalCard} ${styles.animateOnScroll}`}
+                            style={{ transitionDelay: `${index * 0.1}s` }}
+                        >
+                            <span className={styles.additionalIcon}>{project.icon}</span>
+                            <div>
+                                <span className={styles.additionalTag}>{project.tag}</span>
+                                <h4 className={styles.additionalTitle}>{project.title}</h4>
+                                <p className={styles.additionalDesc}>{project.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
                 {/* VAWC section as a feature banner */}
                 <div className={`card-rounded ${styles.featureBanner} ${styles.animateOnScroll}`}>
                     <div className={styles.featureContent}>
@@ -99,8 +145,8 @@ export default function Programs() {
                         <h3 style={{ fontSize: '1.8rem', color: 'var(--jci-navy)', margin: '0.5rem 0 1rem' }}>Love is Not Blind — VAWC Awareness</h3>
                         <p style={{ color: 'var(--text-body)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
                             Legal awareness webinar series on Violence Against Women and Children. Educating communities
-                            about the law, rights, and resources available for protection and empowerment. Featuring
-                            speaker Atty. Mary Grace Albano.
+                            about the law, rights, and resources available for protection and empowerment. Co-hosted with 18+ JCI chapters nationwide, featuring
+                            speaker Atty. Mary Grace Albaño.
                         </p>
                         <a
                             href="https://www.facebook.com/JCIBoholanaKisses"

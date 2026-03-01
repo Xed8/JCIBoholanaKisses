@@ -3,30 +3,78 @@
 import { useEffect, useRef } from 'react';
 import styles from './Leadership.module.css';
 
-const leaders = [
+const president = {
+    name: 'Ma. Christine Torralba',
+    role: '2026 Local Chapter President',
+    description: 'Leading JCI Boholana Kisses under the PRISTINE banner — championing innovation, inclusive leadership, and community impact across Bohol.',
+    emoji: '👑',
+};
+
+const boardMembers = [
+    {
+        name: 'Zoila Jean Cenabre',
+        role: 'Immediate Past President (2025)',
+        emoji: '🌟',
+    },
     {
         name: 'Francis Diane Cimafranca',
-        role: '2025 Executive Vice President — Internal',
-        description: 'Leads internal chapter operations, membership engagement, and organizational development.',
+        role: 'Executive Vice President — Internal',
         emoji: '👩‍💼',
+    },
+    {
+        name: 'Alennith Mae Fajardo',
+        role: 'Executive Vice President — External',
+        emoji: '🤝',
+    },
+    {
+        name: 'John Sean Rupert Hone',
+        role: 'Secretary',
+        emoji: '📋',
+    },
+    {
+        name: 'Jessa Marie Caborte',
+        role: 'Treasurer',
+        emoji: '💰',
     },
     {
         name: 'Joyce Trexie Marie Cambangay',
         role: '2026 Region VII Local Skills Development Director',
-        description: 'Represents JCI Boholana Kisses at the regional level, driving skills training and leadership development across the Visayas.',
         emoji: '⭐',
     },
     {
-        name: 'Atty. Mary Grace Albaño',
-        role: 'Legal Advocate & Key Speaker',
-        description: 'Champion of women\'s rights and legal awareness. Lead speaker for the "Love is Not Blind" VAWC advocacy webinar series.',
+        name: 'Atty. Frank Lorenzo Pizarras',
+        role: 'Legal Counsel',
         emoji: '⚖️',
     },
     {
         name: 'Warren Ronell Flores',
-        role: '2026 Region VII Skills Development Director',
-        description: 'JCI Cebu collaborator and trainer for the JCI Discover & Explore program, strengthening leadership and organizational management skills.',
+        role: 'Vice-President for Training',
         emoji: '🎓',
+    },
+    {
+        name: 'Lovely Mariz Quirol',
+        role: 'VP for Community Development',
+        emoji: '🏘️',
+    },
+    {
+        name: 'Frazi Anne Egagamao',
+        role: 'Director for Youth Development',
+        emoji: '🌱',
+    },
+    {
+        name: 'Ruby Jane Ebol',
+        role: 'Director for Public Health',
+        emoji: '🏥',
+    },
+    {
+        name: 'Samantha Mari Hibaya',
+        role: 'Director for Membership',
+        emoji: '👥',
+    },
+    {
+        name: 'Jomarleh I. Ucang',
+        role: 'Director for Community Action Program',
+        emoji: '💪',
     },
 ];
 
@@ -48,26 +96,37 @@ export default function Leadership() {
     }, []);
 
     return (
-        <section className={styles.leadership} ref={sectionRef}>
+        <section id="leadership" className={styles.leadership} ref={sectionRef}>
             <div className="container">
                 <div className={styles.header}>
-                    <span className={`section-label ${styles.animateOnScroll}`}>The People Behind the Mission</span>
+                    <span className={`section-label ${styles.animateOnScroll}`}>Batch MASARIG — PRISTINE 2026</span>
                     <h2 className={styles.animateOnScroll}>
                         Our <span style={{ color: 'var(--jci-red)' }}>Leaders</span>
                     </h2>
                 </div>
 
+                {/* President Spotlight */}
+                <div className={`card-rounded ${styles.presidentCard} ${styles.animateOnScroll}`}>
+                    <div className={styles.presidentEmoji}>{president.emoji}</div>
+                    <div className={styles.presidentInfo}>
+                        <h3 className={styles.presidentName}>{president.name}</h3>
+                        <span className={styles.presidentRole}>{president.role}</span>
+                        <p className={styles.presidentDesc}>{president.description}</p>
+                    </div>
+                </div>
+
+                {/* Board of Directors */}
+                <h3 className={`${styles.boardTitle} ${styles.animateOnScroll}`}>Board of Directors</h3>
                 <div className={styles.grid}>
-                    {leaders.map((leader, index) => (
+                    {boardMembers.map((member, index) => (
                         <div
-                            key={leader.name}
+                            key={member.name}
                             className={`card-rounded ${styles.card} ${styles.animateOnScroll}`}
-                            style={{ transitionDelay: `${index * 0.1}s` }}
+                            style={{ transitionDelay: `${index * 0.05}s` }}
                         >
-                            <div className={styles.cardEmoji}>{leader.emoji}</div>
-                            <h3 className={styles.cardName}>{leader.name}</h3>
-                            <span className={styles.cardRole}>{leader.role}</span>
-                            <p className={styles.cardDesc}>{leader.description}</p>
+                            <div className={styles.cardEmoji}>{member.emoji}</div>
+                            <h3 className={styles.cardName}>{member.name}</h3>
+                            <span className={styles.cardRole}>{member.role}</span>
                         </div>
                     ))}
                 </div>
