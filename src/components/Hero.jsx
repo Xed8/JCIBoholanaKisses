@@ -53,17 +53,17 @@ export default function Hero() {
                     {/* Centered Stats in a nested pill container */}
                     <div className={styles.statsRow}>
                         <div className={styles.statItem}>
-                            <span className={styles.statNumber}>10+</span>
-                            <span className={styles.statLabel}>Active Projects</span>
+                            <span className={styles.statNumber}>5.7K</span>
+                            <span className={styles.statLabel}>Followers</span>
                         </div>
                         <div className={styles.divider}></div>
                         <div className={styles.statItem}>
-                            <span className={styles.statNumber}>50+</span>
-                            <span className={styles.statLabel}>Members</span>
+                            <span className={styles.statNumber}>18+</span>
+                            <span className={styles.statLabel}>Partner Chapters</span>
                         </div>
                         <div className={styles.divider}></div>
                         <div className={styles.statItem}>
-                            <span className={styles.statNumber}>2019</span>
+                            <span className={styles.statNumber}>2010</span>
                             <span className={styles.statLabel}>Established</span>
                         </div>
                     </div>

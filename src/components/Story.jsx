@@ -10,11 +10,6 @@ const milestones = [
         description: 'JCI Boholana Kisses was officially established on March 21, 2010, as a proudly all-women and LGBTQ++ inclusive chapter of JCI Philippines in Tagbilaran City, Bohol.',
     },
     {
-        year: '2019',
-        title: 'Growing the Movement',
-        description: 'The chapter expanded its reach across Bohol, launching community outreach programs and leadership workshops targeting young women and LGBTQ++ individuals.',
-    },
-    {
         year: '2025',
         title: 'ON THE GO — VICTORIOUS',
         description: 'Published the February 2025 Souvenir Issue of "ON THE GO Magazine" themed VICTORIOUS, celebrating years of community impact and chapter achievements.',

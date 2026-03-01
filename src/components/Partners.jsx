@@ -47,7 +47,7 @@ export default function Partners() {
                 <div className="container">
                     <div className={styles.header}>
                         <h2 className={styles.animateOnScroll}>
-                            Our <span style={{ color: 'var(--jci-navy)' }}>JCI Network</span>
+                            Our <span style={{ color: 'var(--jci-red)' }}>JCI Network</span>
                         </h2>
                         <p className={`${styles.subtitle} ${styles.animateOnScroll}`}>
                             We believe in the power of collaboration. JCI Boholana Kisses proudly partners with
