@@ -1,8 +1,12 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import Story from '@/components/Story';
+import Creed from '@/components/Creed';
 import Programs from '@/components/Programs';
+import Leadership from '@/components/Leadership';
 import Events from '@/components/Events';
+import Partners from '@/components/Partners';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 
@@ -13,8 +17,12 @@ export default function Home() {
       <main>
         <Hero />
         <About />
+        <Story />
+        <Creed />
         <Programs />
+        <Leadership />
         <Events />
+        <Partners />
         <Contact />
       </main>
       <Footer />

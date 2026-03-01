@@ -1,0 +1,66 @@
+.creed {
+    position: relative;
+    padding: var(--section-padding) 0;
+    background: var(--jci-navy);
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(140, 0, 0, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 8px 24px;
+    border-radius: var(--radius-full);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    color: white;
+    margin-bottom: 3rem;
+}
+
+.quote {
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+.quote p {
+    font-family: var(--font-body);
+    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 2;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.attribution {
+    margin-top: 2.5rem;
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--jci-red);
+    letter-spacing: 0.05em;
+}

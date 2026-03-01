@@ -1,0 +1,87 @@
+.leadership {
+    padding: var(--section-padding) 0;
+    background: white;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.header h2 {
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    color: var(--jci-navy);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+.card {
+    background: var(--bg-section);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-smooth);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+}
+
+.cardEmoji {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.cardName {
+    font-size: 1.05rem;
+    color: var(--jci-navy);
+    margin-bottom: 0.3rem;
+}
+
+.cardRole {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--jci-red);
+    margin-bottom: 1rem;
+}
+
+.cardDesc {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: var(--text-body);
+}
+
+/* Animations */
+.animateOnScroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.animateOnScroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 968px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}

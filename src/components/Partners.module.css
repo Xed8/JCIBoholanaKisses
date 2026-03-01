@@ -1,0 +1,97 @@
+.partners {
+    padding-bottom: var(--section-padding);
+}
+
+.redBg {
+    background: var(--jci-navy);
+    padding: var(--section-padding) 0 5rem;
+}
+
+.header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.header h2 {
+    color: white;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    margin-top: 1rem;
+}
+
+/* Pill cloud */
+.pillCloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    padding: 3rem;
+    background: white;
+    box-shadow: var(--shadow-lg);
+    margin-top: -3rem;
+    position: relative;
+    z-index: 5;
+}
+
+.pill {
+    display: inline-block;
+    background: var(--bg-section);
+    color: var(--jci-navy);
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 10px 22px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(10, 25, 47, 0.08);
+    transition: all var(--transition-fast);
+    cursor: default;
+}
+
+.pill:hover {
+    background: var(--jci-red);
+    color: white;
+    border-color: var(--jci-red);
+    transform: translateY(-2px);
+}
+
+/* CTA */
+.cta {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.cta p {
+    color: var(--text-body);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Animations */
+.animateOnScroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.animateOnScroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .pillCloud {
+        padding: 2rem;
+        margin-top: -2rem;
+    }
+
+    .pill {
+        font-size: 0.75rem;
+        padding: 8px 16px;
+    }
+}

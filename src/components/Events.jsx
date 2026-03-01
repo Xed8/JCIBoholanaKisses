@@ -5,6 +5,13 @@ import styles from './Events.module.css';
 
 const events = [
     {
+        date: 'Mar 7, 2026',
+        title: 'Opportunity to Impact',
+        description: 'Membership recruitment and orientation for aspiring new members. An open invitation to discover the JCI movement and begin your leadership journey.',
+        location: 'Glovasa Bldg, 2nd Flr, M. Torralba St., Tagbilaran City',
+        type: 'Recruitment',
+    },
+    {
         date: 'Feb 22, 2026',
         title: 'JCI Discover & JCI Explore',
         description: 'New member orientation and leadership fundamentals workshop held at Yokoy\'s Cafe, Tagbilaran City.',
@@ -12,16 +19,16 @@ const events = [
         type: 'Training',
     },
     {
-        date: 'Feb 12, 2026',
+        date: 'Feb 13–15, 2026',
         title: 'GABAY 2026 – Visayas Year 5',
-        description: 'LSDD Joyce Trexie Marie Cambangay represents the chapter in the regional skills development competition.',
-        location: 'Visayas Region',
-        type: 'Competition',
+        description: 'LSDD Joyce Trexie Marie Cambangay represents the chapter in the regional skills development conference at Mezzo Hotel, Cebu City.',
+        location: 'Mezzo Hotel, Cebu City',
+        type: 'Conference',
     },
     {
         date: 'Feb 11, 2026',
         title: 'Love is Not Blind – VAWC Webinar',
-        description: 'JCIdeas webinar on "Flirting, Feelings, and the Fine Line of the Law" with Atty. Mary Grace Albano.',
+        description: 'JCIdeas webinar on "Flirting, Feelings, and the Fine Line of the Law" with Atty. Mary Grace Albaño. Co-hosted with 18+ JCI chapters nationwide.',
         location: 'Online / Virtual',
         type: 'Webinar',
     },
