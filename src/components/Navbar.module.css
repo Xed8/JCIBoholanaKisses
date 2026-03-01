@@ -1,0 +1,137 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0;
+    background: white;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-smooth);
+}
+
+.navbar.scrolled {
+    box-shadow: var(--shadow-md);
+}
+
+.navContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    z-index: 1001;
+}
+
+.logoImg {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logoName {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1rem;
+    color: var(--jci-navy);
+    letter-spacing: 0.02em;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.navLink {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    color: var(--text-body);
+    padding: 8px 16px;
+    transition: color var(--transition-fast);
+}
+
+.navLink:hover {
+    color: var(--jci-navy);
+}
+
+.navLink.active {
+    color: var(--maroon);
+}
+
+.navCta {
+    margin-left: 12px;
+    padding: 10px 28px;
+    font-size: 0.78rem;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    z-index: 1001;
+}
+
+.hamburger span {
+    width: 24px;
+    height: 2.5px;
+    background: var(--maroon);
+    border-radius: 2px;
+    transition: all var(--transition-fast);
+}
+
+.hamburgerOpen span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburgerOpen span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburgerOpen span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .navLinks {
+        position: fixed;
+        inset: 0;
+        background: white;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        transform: translateX(100%);
+        transition: transform var(--transition-smooth);
+    }
+
+    .navLinks.open {
+        transform: translateX(0);
+    }
+
+    .navLink {
+        font-size: 1rem;
+        padding: 12px 24px;
+    }
+
+    .navCta {
+        margin-left: 0;
+        margin-top: 16px;
+    }
+}

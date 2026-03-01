@@ -1,0 +1,147 @@
+.aboutWrapper {
+    position: relative;
+    /* We add padding top to ensure the negative margin overlap card has space */
+    padding-top: 6rem;
+}
+
+/* --- Overlapping Card Container --- */
+.overlapCard {
+    position: relative;
+    z-index: 10;
+    margin-top: -120px;
+    /* Pull it up over the hero bottom gradient */
+    margin-bottom: 4rem;
+}
+
+.overlapContent {
+    background: var(--bg-card);
+    padding: 4rem 3rem;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+    border: 1px solid var(--border-light);
+}
+
+.overlapTitle {
+    margin-bottom: 1.5rem;
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.overlapText {
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-body);
+}
+
+/* --- About Main Area --- */
+.about {
+    background: transparent;
+    padding-top: 0;
+}
+
+/* --- Values Grid --- */
+.valuesGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-bottom: 4rem;
+}
+
+.valueCard {
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid var(--border-light);
+}
+
+.valueCard h4 {
+    margin: 16px 0 10px;
+    font-size: 1.1rem;
+    color: var(--jci-navy);
+}
+
+.valueCard p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.valueEmoji {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+    background: rgba(10, 25, 47, 0.03);
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* --- Photo Section --- */
+.photoSection {
+    border: 1px solid var(--border-light);
+}
+
+.groupPhoto {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.photoCaption {
+    background: var(--jci-navy);
+    color: white;
+    padding: 20px 24px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.05em;
+}
+
+/* --- Animations --- */
+.animateOnScroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animateOnScroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .valuesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .overlapCard {
+        margin-top: -80px;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .overlapContent {
+        padding: 3rem 1.5rem;
+    }
+
+    .valuesGrid {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .valuesGrid {
+        grid-template-columns: 1fr;
+    }
+}
