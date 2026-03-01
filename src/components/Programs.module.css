@@ -2,8 +2,8 @@
     padding-bottom: var(--section-padding);
 }
 
-.navyBg {
-    background: var(--maroon);
+.redBg {
+    background: var(--jci-red);
     padding: var(--section-padding) 0 6rem;
 }
 

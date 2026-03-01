@@ -109,7 +109,7 @@ export default function Programs() {
                         </a>
                     </div>
                     <div className={styles.featureImage}>
-                        <img src="/images/photos-grid.png" alt="JCI Boholana Kisses Photos" />
+                        <img src="/images/photos-grid.jpg" alt="JCI Boholana Kisses Photos" />
                     </div>
                 </div>
             </div>
