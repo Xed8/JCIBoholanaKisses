@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import styles from './About.module.css';
+import groupPhotoImg from '../../public/images/group-photo.jpg';
 
 const values = [
     {
@@ -82,7 +83,7 @@ export default function About() {
 
                     {/* Group photo section */}
                     <div className={`card-rounded ${styles.photoSection} ${styles.animateOnScroll}`}>
-                        <img src="/images/group-photo.jpg" alt="JCI Boholana Kisses Members" className={styles.groupPhoto} />
+                        <img src={groupPhotoImg.src} alt="JCI Boholana Kisses Members" className={styles.groupPhoto} />
                         <div className={styles.photoCaption}>
                             <span>📍 17-E Carlos P. Garcia Avenue, Tagbilaran City, Bohol, Philippines</span>
                         </div>

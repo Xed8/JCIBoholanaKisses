@@ -1,6 +1,8 @@
 'use client';
 
 import styles from './Hero.module.css';
+import heroBgImg from '../../public/images/hero-hg.jpg';
+import coverImg from '../../public/images/cover.jpg';
 
 export default function Hero() {
     return (
@@ -8,8 +10,8 @@ export default function Hero() {
             {/* Background Layer */}
             <div className={styles.heroBg}>
                 <img
-                    src="/images/hero-hg.jpg"
-                    onError={(e) => { e.target.onerror = null; e.target.src = "/images/cover.jpg" }}
+                    src={heroBgImg.src}
+                    onError={(e) => { e.target.onerror = null; e.target.src = coverImg.src }}
                     alt="JCI Boholana Kisses Chapter Members"
                     className={styles.heroBgImg}
                 />

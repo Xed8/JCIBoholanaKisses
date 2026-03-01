@@ -1,4 +1,5 @@
 import styles from './Footer.module.css';
+import logoImg from '../../public/images/logo.jpg';
 
 const quickLinks = [
     { label: 'Home', href: '#home' },
@@ -17,7 +18,7 @@ export default function Footer() {
                 <div className={styles.grid}>
                     <div className={styles.brand}>
                         <div className={styles.logo}>
-                            <img src="/images/logo.jpg" alt="JCI Boholana Kisses" className={styles.logoImg} />
+                            <img src={logoImg.src} alt="JCI Boholana Kisses" className={styles.logoImg} />
                             <div>
                                 <span className={styles.logoName}>JCI Boholana Kisses</span>
                                 <span className={styles.logoTagline}>Developing leaders for a changing world.</span>

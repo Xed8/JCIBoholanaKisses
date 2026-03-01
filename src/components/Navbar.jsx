@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
+import logoImg from '../../public/images/logo.jpg';
 
 const navLinks = [
   { label: 'HOME', href: '#home' },
@@ -43,7 +44,7 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.navContainer}`}>
         <a href="#home" className={styles.logo} onClick={(e) => handleLinkClick(e, '#home')}>
-          <img src="/images/logo.jpg" alt="JCI Boholana Kisses Logo" className={styles.logoImg} />
+          <img src={logoImg.src} alt="JCI Boholana Kisses Logo" className={styles.logoImg} />
           <div className={styles.logoText}>
             <span className={styles.logoName}>JCI Boholana Kisses</span>
           </div>

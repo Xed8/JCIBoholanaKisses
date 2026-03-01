@@ -2,22 +2,26 @@
 
 import { useEffect, useRef } from 'react';
 import styles from './Programs.module.css';
+import coverImg from '../../public/images/cover.jpg';
+import cover1Img from '../../public/images/cover1.jpg';
+import cover2Img from '../../public/images/cover2.jpg';
+import photosGridImg from '../../public/images/photos-grid.jpg';
 
 const programs = [
     {
-        image: '/images/cover2.jpg',
+        image: cover2Img.src,
         title: 'JCI Discover & Explore',
         description: 'New member orientation and leadership fundamentals program. Discover the JCI movement and explore your potential as a future leader through hands-on workshops.',
         tag: 'Leadership Training',
     },
     {
-        image: '/images/cover1.jpg',
+        image: cover1Img.src,
         title: 'Hearts in Bloom',
         description: 'Our signature community outreach project bringing love and support to communities across Bohol — from feeding programs to donations, we bloom where we are planted.',
         tag: 'Community Outreach',
     },
     {
-        image: '/images/cover.jpg',
+        image: coverImg.src,
         title: 'GABAY 2026',
         description: 'Skills development and mentorship initiative representing our chapter in the Visayas regional competition. Supporting local skills development through dedicated programs.',
         tag: 'Skills Development',
@@ -109,7 +113,7 @@ export default function Programs() {
                         </a>
                     </div>
                     <div className={styles.featureImage}>
-                        <img src="/images/photos-grid.jpg" alt="JCI Boholana Kisses Photos" />
+                        <img src={photosGridImg.src} alt="JCI Boholana Kisses Photos" />
                     </div>
                 </div>
             </div>
