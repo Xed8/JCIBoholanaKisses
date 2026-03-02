@@ -3,58 +3,74 @@
 import { useEffect, useRef } from 'react';
 import styles from './Leadership.module.css';
 
+import torralbaImg from '../../public/images/BOARD-OF-DIRECTORS/MA. CHRISTINE O. TORRALBA.jpg';
+import cenabreImg from '../../public/images/BOARD-OF-DIRECTORS/ZOILA JEAN CENABRE.jpg';
+import pizarrasImg from '../../public/images/BOARD-OF-DIRECTORS/FRANK LORENZO R. PIZARRAS.jpg';
+import cimafrancaImg from '../../public/images/BOARD-OF-DIRECTORS/FRANCIS DIANE F. CIMAFRANCA.jpg';
+import fajardoImg from '../../public/images/BOARD-OF-DIRECTORS/ALENNITH MAE J. FAJARDO.jpg';
+import heneImg from '../../public/images/BOARD-OF-DIRECTORS/JOHN SEAN RUPERT G. HENE.jpg';
+import caberteImg from '../../public/images/BOARD-OF-DIRECTORS/JESSA MARIE B CABERTE.jpg';
+import cabagnotImg from '../../public/images/BOARD-OF-DIRECTORS/JOYCE TREXIE MARIE B. CABAGNOT.jpg';
+import quirolImg from '../../public/images/BOARD-OF-DIRECTORS/LOVELY MARIZ B. QUIROL.jpg';
+import malinaoImg from '../../public/images/BOARD-OF-DIRECTORS/MELODY JOY G. MALINAO.jpg';
+import hibayaImg from '../../public/images/BOARD-OF-DIRECTORS/SAMANTHA MARI A. HIBAYA.jpg';
+import martinImg from '../../public/images/BOARD-OF-DIRECTORS/ROCHELLE MARIE L. MARTIN.png';
+import gumilaImg from '../../public/images/BOARD-OF-DIRECTORS/TEONIKKA MARIE T. GUMILA.jpg';
+import ebolImg from '../../public/images/BOARD-OF-DIRECTORS/RUBY JANE L. EBOL.jpg';
+import lanadaImg from '../../public/images/BOARD-OF-DIRECTORS/CHRISTINE MARIE B. LAÑADA.jpg';
+
 const president = {
     name: 'Ma. Christine O. Torralba',
     role: 'President',
     description: 'Leading JCI Boholana Kisses under the PRISTINE banner — championing innovation, inclusive leadership, and community impact across Bohol.',
-    image: '/images/BOARD-OF-DIRECTORS/MA. CHRISTINE O. TORRALBA.JPG',
+    image: torralbaImg.src,
 };
 
 const boardMembers = [
     {
         name: 'Zoila Jean Cenabre',
         role: 'Immediate Past President',
-        image: '/images/BOARD-OF-DIRECTORS/ZOILA JEAN CENABRE.jpg',
+        image: cenabreImg.src,
     },
     {
         name: 'Frank Lorenzo R. Pizarras',
         role: 'Legal Counsel',
-        image: '/images/BOARD-OF-DIRECTORS/FRANK LORENZO R. PIZARRAS.jpg',
+        image: pizarrasImg.src,
     },
     {
         name: 'Francis Diane F. Cimafranca',
         role: 'EVP – Internal Affairs',
-        image: '/images/BOARD-OF-DIRECTORS/FRANCIS DIANE F. CIMAFRANCA.jpg',
+        image: cimafrancaImg.src,
     },
     {
         name: 'Alennith Mae J. Fajardo',
         role: 'EVP – External Affairs',
-        image: '/images/BOARD-OF-DIRECTORS/ALENNITH MAE J. FAJARDO.jpg',
+        image: fajardoImg.src,
     },
     {
         name: 'John Sean Rupert G. Hene',
         role: 'LO Secretary General',
-        image: '/images/BOARD-OF-DIRECTORS/JOHN SEAN RUPERT G. HENE.jpg',
+        image: heneImg.src,
     },
     {
         name: 'Jessa Marie B. Caberte',
         role: 'LO Treasurer',
-        image: '/images/BOARD-OF-DIRECTORS/JESSA MARIE B CABERTE.jpg',
+        image: caberteImg.src,
     },
     {
         name: 'Joyce Trexie Marie B. Cabagnot',
         role: 'Local Skills Development Director',
-        image: '/images/BOARD-OF-DIRECTORS/JOYCE TREXIE MARIE B. CABAGNOT.jpg',
+        image: cabagnotImg.src,
     },
     {
         name: 'Lovely Mariz B. Quirol',
         role: 'VP for Community Development',
-        image: '/images/BOARD-OF-DIRECTORS/LOVELY MARIZ B. QUIROL.jpg',
+        image: quirolImg.src,
     },
     {
         name: 'Melody Joy G. Malinao',
         role: 'VP for Business Development',
-        image: '/images/BOARD-OF-DIRECTORS/MELODY JOY G. MALINAO.jpg',
+        image: malinaoImg.src,
     },
     {
         name: 'Ma. Christie A. Acero',
@@ -64,27 +80,27 @@ const boardMembers = [
     {
         name: 'Samantha Mari A. Hibaya',
         role: 'VP for Membership Development',
-        image: '/images/BOARD-OF-DIRECTORS/SAMANTHA MARI A. HIBAYA.jpg',
+        image: hibayaImg.src,
     },
     {
         name: 'Rochelle Marie L. Martin',
         role: 'Dir. for National Relations',
-        image: '/images/BOARD-OF-DIRECTORS/ROCHELLE MARIE L. MARTIN.png',
+        image: martinImg.src,
     },
     {
         name: 'Teonikka Marie T. Gumila',
         role: 'Dir. for National Programs',
-        image: '/images/BOARD-OF-DIRECTORS/TEONIKKA MARIE T. GUMILA.jpg',
+        image: gumilaImg.src,
     },
     {
         name: 'Ruby Jane L. Ebol',
         role: 'Dir. for Public Health',
-        image: '/images/BOARD-OF-DIRECTORS/RUBY JANE L. EBOL.jpg',
+        image: ebolImg.src,
     },
     {
         name: 'Christine Marie B. Lañada',
         role: 'Dir. for Internationalism',
-        image: '/images/BOARD-OF-DIRECTORS/CHRISTINE MARIE B. LAÑADA.jpg',
+        image: lanadaImg.src,
     },
 ];
 
