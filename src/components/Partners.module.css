@@ -152,3 +152,18 @@
         gap: 16px;
     }
 }
+
+@media (max-width: 480px) {
+    .redBg {
+        padding: 4rem 0 6rem;
+    }
+
+    .corporateGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .pillCloud {
+        padding: 1.5rem;
+        gap: 10px;
+    }
+}

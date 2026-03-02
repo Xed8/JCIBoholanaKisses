@@ -90,3 +90,21 @@
     opacity: 1;
     transform: translateY(0);
 }
+
+@media (max-width: 768px) {
+    .creed {
+        padding: 5rem 0;
+    }
+
+    .badge {
+        margin-bottom: 2rem;
+    }
+
+    .quote p {
+        font-size: clamp(1.2rem, 6vw, 1.8rem);
+    }
+
+    .attribution {
+        margin-top: 3rem;
+    }
+}
