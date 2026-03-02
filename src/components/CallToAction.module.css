@@ -1,0 +1,139 @@
+.cta {
+    position: relative;
+    padding: clamp(6rem, 12vw, 10rem) 0;
+    overflow: hidden;
+    background: var(--jci-red);
+}
+
+.background {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--jci-red) 0%, rgba(140, 0, 0, 0.95) 100%);
+    z-index: 1;
+}
+
+.pattern {
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 15% 85%, rgba(0, 0, 0, 0.2) 0%, transparent 60%),
+        radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    color: white;
+    font-size: clamp(3rem, 7vw, 5rem);
+    margin-bottom: 2rem;
+    max-width: 900px;
+    font-family: 'Playfair Display', Georgia, serif;
+    line-height: 1.1;
+}
+
+.highlight {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    max-width: 650px;
+    line-height: 1.8;
+    margin-bottom: 4rem;
+    font-weight: 300;
+}
+
+.actions {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Button styles */
+.btnMember {
+    background: white;
+    color: var(--jci-red);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    font-weight: 800;
+    padding: 16px 36px;
+    border-radius: 4px;
+    transition: all var(--transition-smooth);
+}
+
+.btnMember:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.btnPartner {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 16px 36px;
+    border-radius: 4px;
+    font-weight: 700;
+    transition: all var(--transition-smooth);
+}
+
+.btnPartner:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: translateY(-4px);
+}
+
+.btnContact {
+    background: rgba(0, 0, 0, 0.15);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    padding: 16px 36px;
+    border-radius: 4px;
+    font-weight: 700;
+    transition: all var(--transition-smooth);
+}
+
+.btnContact:hover {
+    background: rgba(0, 0, 0, 0.25);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-4px);
+}
+
+/* Scroll animation */
+.animateOnScroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .btnMember,
+    .btnPartner,
+    .btnContact {
+        width: 100%;
+    }
+}

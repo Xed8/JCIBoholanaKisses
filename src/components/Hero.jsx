@@ -1,13 +1,13 @@
 'use client';
 
 import styles from './Hero.module.css';
-import heroBgImg from '../../public/images/hero-hg.jpg';
+import heroBgImg from '../../public/images/group-photo.jpg';
 import coverImg from '../../public/images/cover.jpg';
 
 export default function Hero() {
     return (
         <section id="home" className={styles.hero}>
-            {/* Background Layer */}
+            {/* Cinematic Background Layer */}
             <div className={styles.heroBg}>
                 <img
                     src={heroBgImg.src}
@@ -15,58 +15,57 @@ export default function Hero() {
                     alt="JCI Boholana Kisses Chapter Members"
                     className={styles.heroBgImg}
                 />
-                {/* Navy & Orange gradient overlays for that bold Manila look */}
                 <div className={styles.heroOverlayDark}></div>
                 <div className={styles.heroOverlayGradient}></div>
             </div>
 
             <div className={`container ${styles.heroContent}`}>
-                <div className={styles.textContent}>
-                    <div className={styles.labelWrapper}>
-                        <span className={styles.heroBadge}>JCI Philippines</span>
+                <div className={styles.textGrid}>
+                    <div className={styles.badgeCol}>
+                        <span className={styles.heroBadge}>JCI Boholana Kisses • Tagbilaran</span>
+                        <p className={styles.subtitle}>
+                            The all women–LGBTQ++ chapter of JCI Philippines — developing inclusive leaders who create lasting impact through service, advocacy, and community action.
+                        </p>
+                        <div className={styles.actions}>
+                            <a href="#programs" className={`btn btn-primary ${styles.ctaBtn}`}>
+                                View Projects
+                            </a>
+                            <a href="https://www.facebook.com/JCIBoholanaKisses" target="_blank" rel="noopener noreferrer" className={`btn btn-outline ${styles.ctaOutline}`}>
+                                Join Us
+                            </a>
+                        </div>
                     </div>
 
-                    <h1 className={styles.title}>
-                        <span className={styles.titleLine}>Boholana</span>
-                        <br />
-                        <span className={styles.titleAccent}>Kisses</span>
-                    </h1>
-
-                    <p className={styles.subtitle}>
-                        Developing leaders for a changing world. Empowering women & LGBTQ++ in Bohol through sustainable and impactful community initiatives.
-                    </p>
-
-                    <div className={styles.actions}>
-                        <a
-                            href="https://www.facebook.com/JCIBoholanaKisses"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn btn-primary"
-                        >
-                            Join Our Chapter
-                        </a>
-                        <a href="#about" className="btn btn-secondary">
-                            Learn More
-                        </a>
+                    <div className={styles.titleCol}>
+                        <h1 className={styles.hugeTitle}>
+                            <span className={styles.titleLine1}>Empowering</span>
+                            <span className={styles.titleLine2}>Leaders.</span>
+                        </h1>
+                        <span className={styles.titleAccent}>Transforming Communities.</span>
                     </div>
+                </div>
 
-                    {/* Centered Stats in a nested pill container */}
-                    <div className={styles.statsRow}>
+                {/* Bottom Anchored Stats */}
+                <div className={styles.bottomBar}>
+                    <div className={styles.statGroup}>
                         <div className={styles.statItem}>
                             <span className={styles.statNumber}>5.7K</span>
                             <span className={styles.statLabel}>Followers</span>
                         </div>
-                        <div className={styles.divider}></div>
                         <div className={styles.statItem}>
                             <span className={styles.statNumber}>18+</span>
                             <span className={styles.statLabel}>Partner Chapters</span>
                         </div>
-                        <div className={styles.divider}></div>
                         <div className={styles.statItem}>
                             <span className={styles.statNumber}>2009</span>
                             <span className={styles.statLabel}>Established</span>
                         </div>
                     </div>
+
+                    <a href="#about" className={styles.scrollIndicator}>
+                        <span className={styles.scrollText}>Scroll to discover</span>
+                        <div className={styles.scrollLine}></div>
+                    </a>
                 </div>
             </div>
         </section>

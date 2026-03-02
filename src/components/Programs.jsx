@@ -17,46 +17,26 @@ const programs = [
     {
         image: cover1Img.src,
         title: 'Hearts in Bloom',
-        description: 'Our signature community outreach project — The Velvet Love Series. A Valentine\'s-themed fellowship and fundraising initiative in partnership with Brunched by Chill Pill Cafe.',
+        description: 'Our signature community outreach project — The Velvet Love Series. A Valentine\'s-themed fellowship and fundraising initiative.',
         tag: 'Community Outreach',
     },
     {
         image: coverImg.src,
         title: 'GABAY 2026',
-        description: 'Regional leadership conference at Mezzo Hotel, Cebu City. LSDD Joyce Trexie Marie Cambangay represents our chapter in skills development at the Visayas level.',
+        description: 'Regional leadership conference at Mezzo Hotel, Cebu City. LSDD Joyce Trexie Marie Cambangay represents our chapter in skills development.',
         tag: 'Skills Development',
     },
-];
-
-const additionalProjects = [
     {
-        title: 'Sanitation for the Nation',
-        description: 'A community health and hygiene collaboration with JCI Manila, bringing sanitation awareness and resources to underserved communities.',
-        tag: 'Health & Hygiene',
-        icon: '🧼',
-    },
-    {
-        title: 'TABANG BOHOL',
-        description: 'Disaster response initiative mobilized following Typhoon Odette, providing relief goods, rebuilding support, and community aid across affected areas of Bohol.',
-        tag: 'Disaster Response',
-        icon: '🤲',
-    },
-    {
-        title: 'Kawayanihan 2.0',
-        description: 'An environmental sustainability project focused on conservation efforts and eco-friendly community initiatives in Bohol.',
-        tag: 'Environment',
-        icon: '🌿',
-    },
-    {
-        title: '44th VIEWCON',
-        description: 'JCI Boholana Kisses hosted the prestigious 44th Visayas Area Conference (VIEWCON) in September 2024 — a landmark regional event.',
-        tag: 'Regional Conference',
-        icon: '🏆',
-    },
+        image: photosGridImg.src,
+        title: 'Love is Not Blind',
+        description: 'Legal awareness webinar series on Violence Against Women and Children. Educating communities about the law, rights, and resources.',
+        tag: 'Legal Advocacy',
+    }
 ];
 
 export default function Programs() {
     const sectionRef = useRef(null);
+    const scrollRef = useRef(null);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -72,94 +52,55 @@ export default function Programs() {
         return () => elements?.forEach((el) => observer.unobserve(el));
     }, []);
 
+    const scrollLeft = () => {
+        if (scrollRef.current) scrollRef.current.scrollBy({ left: -400, behavior: 'smooth' });
+    };
+
+    const scrollRight = () => {
+        if (scrollRef.current) scrollRef.current.scrollBy({ left: 400, behavior: 'smooth' });
+    };
+
     return (
         <section id="programs" className={styles.programs} ref={sectionRef}>
-            <div className={styles.redBg}>
-                <div className="container">
-                    <div className={styles.header}>
-                        <h2 className={`${styles.title} ${styles.animateOnScroll}`}>
-                            Our <span style={{ color: 'var(--jci-navy)' }}>Projects</span>
-                        </h2>
-                        <p className={`${styles.subtitle} ${styles.animateOnScroll}`}>
-                            Our projects are designed to empower leaders to go beyond convention — driving innovation,
-                            fostering collaboration, and creating sustainable impact in Bohol and beyond.
-                        </p>
-                    </div>
+            <div className={`container ${styles.headerContainer}`}>
+                <div className={styles.headerText}>
+                    <span className={`text-overline ${styles.animateOnScroll}`}>Initiatives</span>
+                    <h2 className={`${styles.title} ${styles.animateOnScroll}`}>
+                        Impact In <span style={{ color: 'var(--jci-maroon)' }}>Action.</span>
+                    </h2>
+                </div>
+                <div className={`${styles.scrollControls} ${styles.animateOnScroll}`}>
+                    <button onClick={scrollLeft} className={styles.controlBtn} aria-label="Scroll left">←</button>
+                    <button onClick={scrollRight} className={styles.controlBtn} aria-label="Scroll right">→</button>
                 </div>
             </div>
 
-            <div className="container">
-                {/* Main project cards with images */}
-                <div className={styles.grid}>
+            {/* Horizontal Scroll Track */}
+            <div className={`${styles.carouselWrapper} ${styles.animateOnScroll}`}>
+                <div className={styles.carouselTrack} ref={scrollRef}>
                     {programs.map((program, index) => (
-                        <div
-                            key={program.title}
-                            className={`${styles.card} ${styles.animateOnScroll}`}
-                            style={{ transitionDelay: `${index * 0.15}s` }}
-                        >
-                            <div className={styles.cardImage}>
-                                <img src={program.image} alt={program.title} />
-                                <div className={styles.cardOverlay}>
-                                    <span className={styles.cardTag}>{program.tag}</span>
-                                </div>
+                        <div key={program.title} className={styles.carouselCard}>
+                            <div className={styles.cardImageWrapper}>
+                                <img src={program.image} alt={program.title} className={styles.cardImg} />
+                                <div className={styles.cardOverlay}></div>
                             </div>
                             <div className={styles.cardContent}>
+                                <span className={styles.cardTag}>{program.tag}</span>
                                 <h3 className={styles.cardTitle}>{program.title}</h3>
-                                <p className={styles.cardDescription}>{program.description}</p>
-                                <a
-                                    href="https://www.facebook.com/JCIBoholanaKisses"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn btn-outline"
-                                    style={{ padding: '10px 24px', fontSize: '0.8rem', width: '100%', marginTop: '1rem' }}
-                                >
-                                    Learn more
-                                </a>
+                                <p className={styles.cardDesc}>{program.description}</p>
                             </div>
                         </div>
                     ))}
-                </div>
 
-                {/* Additional Projects — compact icon cards */}
-                <div className={styles.additionalGrid}>
-                    {additionalProjects.map((project, index) => (
-                        <div
-                            key={project.title}
-                            className={`card-rounded ${styles.additionalCard} ${styles.animateOnScroll}`}
-                            style={{ transitionDelay: `${index * 0.1}s` }}
-                        >
-                            <span className={styles.additionalIcon}>{project.icon}</span>
-                            <div>
-                                <span className={styles.additionalTag}>{project.tag}</span>
-                                <h4 className={styles.additionalTitle}>{project.title}</h4>
-                                <p className={styles.additionalDesc}>{project.description}</p>
-                            </div>
+                    {/* End Card CTA */}
+                    <div className={`${styles.carouselCard} ${styles.endCard}`}>
+                        <div className={styles.endCardContent}>
+                            <h3>See More Projects</h3>
+                            <p>Follow our journey and discover how we are making an impact in the community.</p>
+                            <a href="https://www.facebook.com/JCIBoholanaKisses" target="_blank" rel="noopener noreferrer" className="btn btn-primary">
+                                Follow Us
+                            </a>
                         </div>
-                    ))}
-                </div>
-
-                {/* VAWC section as a feature banner */}
-                <div className={`card-rounded ${styles.featureBanner} ${styles.animateOnScroll}`}>
-                    <div className={styles.featureContent}>
-                        <span className="section-label" style={{ color: 'var(--jci-red)' }}>LEGAL ADVOCACY</span>
-                        <h3 style={{ fontSize: '1.8rem', color: 'var(--jci-navy)', margin: '0.5rem 0 1rem' }}>Love is Not Blind — VAWC Awareness</h3>
-                        <p style={{ color: 'var(--text-body)', lineHeight: '1.8', marginBottom: '1.5rem' }}>
-                            Legal awareness webinar series on Violence Against Women and Children. Educating communities
-                            about the law, rights, and resources available for protection and empowerment. Co-hosted with 18+ JCI chapters nationwide, featuring
-                            speaker Atty. Mary Grace Albaño.
-                        </p>
-                        <a
-                            href="https://www.facebook.com/JCIBoholanaKisses"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn btn-primary"
-                            style={{ alignSelf: 'flex-start' }}
-                        >
-                            VIEW ON FACEBOOK
-                        </a>
-                    </div>
-                    <div className={styles.featureImage}>
-                        <img src={photosGridImg.src} alt="JCI Boholana Kisses Photos" />
                     </div>
                 </div>
             </div>

@@ -5,25 +5,30 @@
 
 /* ===== CSS Custom Properties ===== */
 :root {
-  /* Brand Colors — Modern JCI Hierarchy */
+  /* Brand Colors — JCI Boholana Kisses Directive */
   --jci-navy: #0A192F;
   --jci-navy-light: #112240;
 
-  /* JCI Manila uses a rich, vibrant Red for their primary actions */
-  --jci-red: #D31245;
-  /* Official JCI Red approximate */
-  --jci-red-dark: #A60D35;
-  --jci-red-light: #E81A5D;
+  /* PRIMARY: JCI Maroon */
+  --jci-maroon: #8C0000;
+  --jci-maroon-dark: #6B0000;
+  --jci-maroon-light: #A81010;
 
-  /* Traditional Maroon/Gold as secondary accents only */
-  --maroon: #8C0000;
-  --gold: #D4A843;
+  /* Legacy alias — maps to maroon now */
+  --jci-red: #8C0000;
+  --jci-red-dark: #6B0000;
+  --jci-red-light: #A81010;
+
+  /* Accent Colors */
+  --accent-gold: #D4A843;
+  --accent-gold-light: #E8C670;
+  --accent-blue: #1B4F8A;
+  --accent-blue-light: #2D6AB8;
+  --accent-pink: #D9728E;
 
   /* Theme neutrals */
   --bg-primary: #F8F9FA;
-  /* Off-white instead of harsh white */
   --bg-warm: #F0EEE9;
-  /* Light cream for layered sections */
   --bg-card: #FFFFFF;
 
   --text-dark: #0A192F;
@@ -38,19 +43,19 @@
 
   /* Spacing */
   --section-padding: clamp(4rem, 8vw, 7rem);
-  --container-max: 1280px;
+  --container-max: 1440px;
   --container-padding: clamp(1rem, 5vw, 2.5rem);
 
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 
-  /* Soft Shadows (No aggressive dark shadows) */
+  /* Soft Shadows */
   --shadow-sm: 0 4px 12px rgba(10, 25, 47, 0.04);
   --shadow-md: 0 8px 24px rgba(10, 25, 47, 0.06);
   --shadow-lg: 0 16px 48px rgba(10, 25, 47, 0.08);
 
-  /* Border Radius - The "Manila" Look */
+  /* Border Radius */
   --radius-sm: 12px;
   --radius-md: 20px;
   --radius-lg: 32px;
@@ -130,6 +135,37 @@ img {
   display: block;
 }
 
+/* ===== Editorial Typography Utilities ===== */
+.text-overline {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--jci-maroon);
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.text-editorial-huge {
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.text-pull-quote {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.3;
+  font-weight: 600;
+  color: var(--jci-navy);
+  border-left: 6px solid var(--jci-maroon);
+  padding-left: 2rem;
+  margin: 3rem 0;
+}
+
 /* ===== Utilities ===== */
 .container {
   max-width: var(--container-max);
@@ -196,15 +232,15 @@ img {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--jci-red), var(--jci-red-dark));
+  background: linear-gradient(135deg, var(--jci-maroon), var(--jci-maroon-dark));
   color: white;
-  box-shadow: 0 8px 20px rgba(211, 18, 69, 0.25);
+  box-shadow: 0 8px 20px rgba(140, 0, 0, 0.25);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(211, 18, 69, 0.35);
-  background: linear-gradient(135deg, var(--jci-red-light), var(--jci-red));
+  box-shadow: 0 12px 28px rgba(140, 0, 0, 0.35);
+  background: linear-gradient(135deg, var(--jci-maroon-light), var(--jci-maroon));
 }
 
 .btn-secondary {
@@ -256,6 +292,6 @@ img {
 
 /* ===== Selection ===== */
 ::selection {
-  background: var(--jci-red);
+  background: var(--jci-maroon);
   color: white;
 }

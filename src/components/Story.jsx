@@ -63,19 +63,20 @@ export default function Story() {
                 </div>
 
                 <div className={styles.timeline}>
-                    <div className={styles.timelineLine}></div>
                     {milestones.map((milestone, index) => (
                         <div
                             key={milestone.year}
-                            className={`${styles.timelineItem} ${index % 2 === 0 ? styles.left : styles.right} ${styles.animateOnScroll}`}
+                            className={`${styles.timelineItem} ${styles.animateOnScroll}`}
                             style={{ transitionDelay: `${index * 0.15}s` }}
                         >
-                            <div className={styles.timelineDot}>
-                                <span>{milestone.year}</span>
+                            <div className={styles.yearColumn}>
+                                {milestone.year}
                             </div>
-                            <div className={`card-rounded ${styles.timelineCard}`}>
-                                <h3>{milestone.title}</h3>
-                                <p>{milestone.description}</p>
+                            <div className={styles.contentColumn}>
+                                <div className={`card-rounded ${styles.timelineCard}`}>
+                                    <h3>{milestone.title}</h3>
+                                    <p>{milestone.description}</p>
+                                </div>
                             </div>
                         </div>
                     ))}

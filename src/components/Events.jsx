@@ -72,7 +72,7 @@ export default function Events() {
                     {events.map((event, index) => (
                         <div
                             key={event.title}
-                            className={`card-rounded ${styles.card} ${styles.animateOnScroll}`}
+                            className={`${styles.card} ${styles.animateOnScroll}`}
                             style={{ transitionDelay: `${index * 0.1}s` }}
                         >
                             <div className={styles.cardDate}>

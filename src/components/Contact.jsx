@@ -46,21 +46,21 @@ export default function Contact() {
                         </p>
 
                         <div className={styles.contactItems}>
-                            <a href="mailto:jciboholanakisses2010@gmail.com" className={`card-rounded ${styles.contactItem} ${styles.animateOnScroll}`}>
+                            <a href="mailto:jciboholanakisses2010@gmail.com" className={`${styles.contactItem} ${styles.animateOnScroll}`}>
                                 <div className={styles.contactIcon}>✉️</div>
                                 <div>
                                     <h4>Email Us</h4>
                                     <p>jciboholanakisses2010@gmail.com</p>
                                 </div>
                             </a>
-                            <a href="https://maps.google.com/?q=17-E+Carlos+P+Garcia+Avenue+Tagbilaran+City+Bohol" target="_blank" rel="noopener noreferrer" className={`card-rounded ${styles.contactItem} ${styles.animateOnScroll}`}>
+                            <a href="https://maps.google.com/?q=17-E+Carlos+P+Garcia+Avenue+Tagbilaran+City+Bohol" target="_blank" rel="noopener noreferrer" className={`${styles.contactItem} ${styles.animateOnScroll}`}>
                                 <div className={styles.contactIcon}>📍</div>
                                 <div>
                                     <h4>Visit Us</h4>
                                     <p>17-E Carlos P. Garcia Ave, Tagbilaran City</p>
                                 </div>
                             </a>
-                            <a href="https://www.facebook.com/JCIBoholanaKisses" target="_blank" rel="noopener noreferrer" className={`card-rounded ${styles.contactItem} ${styles.animateOnScroll}`}>
+                            <a href="https://www.facebook.com/JCIBoholanaKisses" target="_blank" rel="noopener noreferrer" className={`${styles.contactItem} ${styles.animateOnScroll}`}>
                                 <div className={styles.contactIcon}>📘</div>
                                 <div>
                                     <h4>Follow Us</h4>
@@ -70,7 +70,7 @@ export default function Contact() {
                         </div>
                     </div>
 
-                    <div className={`card-rounded ${styles.formWrapper} ${styles.animateOnScroll}`}>
+                    <div className={`${styles.formWrapper} ${styles.animateOnScroll}`}>
                         <form onSubmit={handleSubmit}>
                             <h3>Send a Message</h3>
                             <div className={styles.formGroup}>

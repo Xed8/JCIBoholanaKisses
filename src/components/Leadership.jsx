@@ -4,79 +4,100 @@ import { useEffect, useRef } from 'react';
 import styles from './Leadership.module.css';
 
 const president = {
-    name: 'Ma. Christine Torralba',
-    role: '2026 Local Chapter President',
+    name: 'Ma. Christine O. Torralba',
+    role: 'President',
     description: 'Leading JCI Boholana Kisses under the PRISTINE banner — championing innovation, inclusive leadership, and community impact across Bohol.',
-    emoji: '👑',
+    image: '/images/BOARD-OF-DIRECTORS/MA. CHRISTINE O. TORRALBA.JPG',
 };
 
 const boardMembers = [
     {
         name: 'Zoila Jean Cenabre',
-        role: 'Immediate Past President (2025)',
-        emoji: '🌟',
+        role: 'Immediate Past President',
+        image: '/images/BOARD-OF-DIRECTORS/ZOILA JEAN CENABRE.jpg',
     },
     {
-        name: 'Francis Diane Cimafranca',
-        role: 'Executive Vice President — Internal',
-        emoji: '👩‍💼',
-    },
-    {
-        name: 'Alennith Mae Fajardo',
-        role: 'Executive Vice President — External',
-        emoji: '🤝',
-    },
-    {
-        name: 'John Sean Rupert Hone',
-        role: 'Secretary',
-        emoji: '📋',
-    },
-    {
-        name: 'Jessa Marie Caborte',
-        role: 'Treasurer',
-        emoji: '💰',
-    },
-    {
-        name: 'Joyce Trexie Marie Cambangay',
-        role: '2026 Region VII Local Skills Development Director',
-        emoji: '⭐',
-    },
-    {
-        name: 'Atty. Frank Lorenzo Pizarras',
+        name: 'Frank Lorenzo R. Pizarras',
         role: 'Legal Counsel',
-        emoji: '⚖️',
+        image: '/images/BOARD-OF-DIRECTORS/FRANK LORENZO R. PIZARRAS.jpg',
     },
     {
-        name: 'Warren Ronell Flores',
-        role: 'Vice-President for Training',
-        emoji: '🎓',
+        name: 'Francis Diane F. Cimafranca',
+        role: 'EVP – Internal Affairs',
+        image: '/images/BOARD-OF-DIRECTORS/FRANCIS DIANE F. CIMAFRANCA.jpg',
     },
     {
-        name: 'Lovely Mariz Quirol',
+        name: 'Alennith Mae J. Fajardo',
+        role: 'EVP – External Affairs',
+        image: '/images/BOARD-OF-DIRECTORS/ALENNITH MAE J. FAJARDO.jpg',
+    },
+    {
+        name: 'John Sean Rupert G. Hene',
+        role: 'LO Secretary General',
+        image: '/images/BOARD-OF-DIRECTORS/JOHN SEAN RUPERT G. HENE.jpg',
+    },
+    {
+        name: 'Jessa Marie B. Caberte',
+        role: 'LO Treasurer',
+        image: '/images/BOARD-OF-DIRECTORS/JESSA MARIE B CABERTE.jpg',
+    },
+    {
+        name: 'Joyce Trexie Marie B. Cabagnot',
+        role: 'Local Skills Development Director',
+        image: '/images/BOARD-OF-DIRECTORS/JOYCE TREXIE MARIE B. CABAGNOT.jpg',
+    },
+    {
+        name: 'Lovely Mariz B. Quirol',
         role: 'VP for Community Development',
-        emoji: '🏘️',
+        image: '/images/BOARD-OF-DIRECTORS/LOVELY MARIZ B. QUIROL.jpg',
     },
     {
-        name: 'Frazi Anne Egagamao',
-        role: 'Director for Youth Development',
-        emoji: '🌱',
+        name: 'Melody Joy G. Malinao',
+        role: 'VP for Business Development',
+        image: '/images/BOARD-OF-DIRECTORS/MELODY JOY G. MALINAO.jpg',
     },
     {
-        name: 'Ruby Jane Ebol',
-        role: 'Director for Public Health',
-        emoji: '🏥',
+        name: 'Ma. Christie A. Acero',
+        role: 'VP for Linkages',
+        image: null,
     },
     {
-        name: 'Samantha Mari Hibaya',
-        role: 'Director for Membership',
-        emoji: '👥',
+        name: 'Samantha Mari A. Hibaya',
+        role: 'VP for Membership Development',
+        image: '/images/BOARD-OF-DIRECTORS/SAMANTHA MARI A. HIBAYA.jpg',
     },
     {
-        name: 'Jomarleh I. Ucang',
-        role: 'Director for Community Action Program',
-        emoji: '💪',
+        name: 'Rochelle Marie L. Martin',
+        role: 'Dir. for National Relations',
+        image: '/images/BOARD-OF-DIRECTORS/ROCHELLE MARIE L. MARTIN.png',
+    },
+    {
+        name: 'Teonikka Marie T. Gumila',
+        role: 'Dir. for National Programs',
+        image: '/images/BOARD-OF-DIRECTORS/TEONIKKA MARIE T. GUMILA.jpg',
+    },
+    {
+        name: 'Ruby Jane L. Ebol',
+        role: 'Dir. for Public Health',
+        image: '/images/BOARD-OF-DIRECTORS/RUBY JANE L. EBOL.jpg',
+    },
+    {
+        name: 'Christine Marie B. Lañada',
+        role: 'Dir. for Internationalism',
+        image: '/images/BOARD-OF-DIRECTORS/CHRISTINE MARIE B. LAÑADA.jpg',
     },
 ];
+
+function getInitials(name) {
+    return name
+        .replace(/^(Ma\.|Atty\.)\s*/i, '')
+        .split(' ')
+        .filter((w) => w.length > 1)
+        .slice(0, 2)
+        .map((w) => w[0])
+        .join('')
+        .toUpperCase();
+}
 
 export default function Leadership() {
     const sectionRef = useRef(null);
@@ -101,16 +122,18 @@ export default function Leadership() {
                 <div className={styles.header}>
                     <span className={`section-label ${styles.animateOnScroll}`}>Batch MASARIG — PRISTINE 2026</span>
                     <h2 className={styles.animateOnScroll}>
-                        Our <span style={{ color: 'var(--jci-red)' }}>Leaders</span>
+                        Our <span style={{ color: 'var(--jci-maroon)' }}>Leaders</span>
                     </h2>
                 </div>
 
                 {/* President Spotlight */}
-                <div className={`card-rounded ${styles.presidentCard} ${styles.animateOnScroll}`}>
-                    <div className={styles.presidentEmoji}>{president.emoji}</div>
+                <div className={`${styles.presidentCard} ${styles.animateOnScroll}`}>
+                    <div className={styles.presidentPhoto}>
+                        <img src={president.image} alt={president.name} />
+                    </div>
                     <div className={styles.presidentInfo}>
-                        <h3 className={styles.presidentName}>{president.name}</h3>
                         <span className={styles.presidentRole}>{president.role}</span>
+                        <h3 className={styles.presidentName}>{president.name}</h3>
                         <p className={styles.presidentDesc}>{president.description}</p>
                     </div>
                 </div>
@@ -121,10 +144,22 @@ export default function Leadership() {
                     {boardMembers.map((member, index) => (
                         <div
                             key={member.name}
-                            className={`card-rounded ${styles.card} ${styles.animateOnScroll}`}
+                            className={`${styles.card} ${styles.animateOnScroll}`}
                             style={{ transitionDelay: `${index * 0.05}s` }}
                         >
-                            <div className={styles.cardEmoji}>{member.emoji}</div>
+                            <div className={styles.cardPhotoWrapper}>
+                                {member.image ? (
+                                    <img
+                                        src={member.image}
+                                        alt={member.name}
+                                        className={styles.cardPhoto}
+                                    />
+                                ) : (
+                                    <div className={styles.cardInitials}>
+                                        {getInitials(member.name)}
+                                    </div>
+                                )}
+                            </div>
                             <h3 className={styles.cardName}>{member.name}</h3>
                             <span className={styles.cardRole}>{member.role}</span>
                         </div>

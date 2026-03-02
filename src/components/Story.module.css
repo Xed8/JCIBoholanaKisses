@@ -21,97 +21,93 @@
     margin-top: 1rem;
 }
 
-/* --- Timeline --- */
+/* --- Timeline / Editorial Layout --- */
 .timeline {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
     max-width: 900px;
     margin: 0 auto;
     padding: 2rem 0;
 }
 
-.timelineLine {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom, var(--jci-red), var(--jci-navy));
-    transform: translateX(-50%);
-    border-radius: 3px;
-}
-
 .timelineItem {
     display: flex;
-    align-items: flex-start;
-    margin-bottom: 3rem;
+    align-items: center;
     position: relative;
-    width: 50%;
 }
 
-.timelineItem.left {
-    padding-right: 3rem;
-    justify-content: flex-end;
+.timelineItem:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.yearColumn {
+    flex: 1;
+    font-family: var(--font-heading);
+    font-size: clamp(6rem, 15vw, 10rem);
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(18, 30, 60, 0.1);
+    /* Very subtle navy outline */
+    line-height: 1;
     text-align: right;
+    user-select: none;
+    letter-spacing: -4px;
 }
 
-.timelineItem.right {
-    left: 50%;
-    padding-left: 3rem;
+.timelineItem:nth-child(even) .yearColumn {
     text-align: left;
 }
 
-.timelineDot {
-    position: absolute;
-    width: 56px;
-    height: 56px;
-    background: var(--jci-red);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.contentColumn {
+    flex: 1.2;
+    position: relative;
     z-index: 2;
-    box-shadow: 0 0 0 6px rgba(140, 0, 0, 0.15);
+    margin-left: -4rem;
+    /* Overlap effect */
 }
 
-.timelineDot span {
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 0.8rem;
-    color: white;
-}
-
-.left .timelineDot {
-    right: -28px;
-}
-
-.right .timelineDot {
-    left: -28px;
+.timelineItem:nth-child(even) .contentColumn {
+    margin-left: 0;
+    margin-right: -4rem;
 }
 
 .timelineCard {
     background: white;
-    padding: 1.5rem 2rem;
+    padding: 2.5rem;
+    border-left: 4px solid var(--jci-red);
     box-shadow: var(--shadow-md);
-    flex: 1;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timelineItem:nth-child(even) .timelineCard {
+    border-left: none;
+    border-right: 4px solid var(--jci-red);
+}
+
+.timelineCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
 .timelineCard h3 {
-    font-size: 1.15rem;
+    font-size: 1.5rem;
     color: var(--jci-navy);
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
 }
 
 .timelineCard p {
-    font-size: 0.9rem;
-    line-height: 1.7;
+    font-size: 1.05rem;
+    line-height: 1.8;
     color: var(--text-body);
 }
 
 /* Animations */
 .animateOnScroll {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .animateOnScroll.visible {
@@ -121,26 +117,35 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-    .timelineLine {
-        left: 28px;
+
+    .timelineItem,
+    .timelineItem:nth-child(even) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
     }
 
-    .timelineItem {
+    .yearColumn,
+    .timelineItem:nth-child(even) .yearColumn {
+        text-align: left;
+        font-size: 5rem;
+        -webkit-text-stroke: 1px rgba(18, 30, 60, 0.15);
+        margin-bottom: -1.5rem;
+        z-index: 1;
+        letter-spacing: -2px;
+    }
+
+    .contentColumn,
+    .timelineItem:nth-child(even) .contentColumn {
+        margin: 0;
         width: 100%;
-        padding-left: 5rem !important;
-        padding-right: 0 !important;
-        text-align: left !important;
-        justify-content: flex-start !important;
+        padding-left: 1rem;
     }
 
-    .timelineItem.left,
-    .timelineItem.right {
-        left: 0;
-    }
-
-    .left .timelineDot,
-    .right .timelineDot {
-        left: 0;
-        right: auto;
+    .timelineCard,
+    .timelineItem:nth-child(even) .timelineCard {
+        border-left: 4px solid var(--jci-red) !important;
+        border-right: none !important;
+        padding: 1.5rem;
     }
 }

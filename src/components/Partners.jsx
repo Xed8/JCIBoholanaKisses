@@ -66,7 +66,7 @@ export default function Partners() {
             </div>
 
             <div className="container">
-                <div className={`card-rounded ${styles.pillCloud} ${styles.animateOnScroll}`}>
+                <div className={`${styles.pillCloud} ${styles.animateOnScroll}`}>
                     {partnerChapters.map((chapter) => (
                         <span key={chapter} className={styles.pill}>
                             {chapter}

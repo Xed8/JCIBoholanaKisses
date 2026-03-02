@@ -1,230 +1,179 @@
 .programs {
-    padding-bottom: var(--section-padding);
+    padding: var(--section-padding) 0;
+    background: var(--jci-navy);
+    color: white;
+    overflow: hidden;
+    /* Prevent horizontal body scroll */
 }
 
-.redBg {
-    background: var(--jci-red);
-    padding: var(--section-padding) 0 6rem;
+/* --- Header & Controls --- */
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
 }
 
-.header {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 2rem;
-    align-items: center;
+.headerText {
+    max-width: 600px;
 }
 
 .title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
     color: white;
-    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-top: 0.5rem;
 }
 
-.subtitle {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.05rem;
-    line-height: 1.9;
-    text-align: justify;
+.scrollControls {
+    display: flex;
+    gap: 12px;
 }
 
-/* 3-column project grid — overlapping the navy bg */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-top: -2rem;
-    position: relative;
-    z-index: 5;
+.controlBtn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: transparent;
+    color: white;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-fast);
 }
 
-.card {
+.controlBtn:hover {
     background: white;
-    border-radius: var(--radius-lg);
+    color: var(--jci-navy);
+}
+
+/* --- Horizontal Carousel --- */
+.carouselWrapper {
+    width: 100%;
+    padding-left: max(5vw, calc((100vw - var(--container-max)) / 2));
+}
+
+.carouselTrack {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    padding-bottom: 3rem;
+    padding-right: 5vw;
+    /* Breathing room at the end */
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    /* Hide scrollbar */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.carouselTrack::-webkit-scrollbar {
+    display: none;
+}
+
+/* --- Carousel Cards --- */
+.carouselCard {
+    flex: 0 0 420px;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cardImageWrapper {
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: var(--shadow-md);
-    transition: all var(--transition-smooth);
-}
-
-.card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
-}
-
-.cardImage {
     position: relative;
-    height: 220px;
-    overflow: hidden;
+    box-shadow: var(--shadow-md);
 }
 
-.cardImage img {
+.cardImg {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform var(--transition-smooth);
 }
 
-.card:hover .cardImage img {
+.carouselCard:hover .cardImg {
     transform: scale(1.05);
+    /* Slight hover zoom */
 }
 
 .cardOverlay {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 12px 16px;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
-    display: flex;
-    align-items: flex-end;
+    inset: 0;
+    background: linear-gradient(to top, rgba(10, 25, 47, 0.4) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.cardContent {
+    padding-right: 1.5rem;
 }
 
 .cardTag {
     font-family: var(--font-heading);
-    font-size: 0.7rem;
-    font-weight: 700;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--accent-gold);
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--maroon);
-    background: rgba(255, 255, 255, 0.95);
-    padding: 4px 12px;
-    border-radius: var(--radius-full);
-}
-
-.cardContent {
-    padding: 24px;
+    letter-spacing: 0.15em;
+    display: block;
+    margin-bottom: 0.75rem;
 }
 
 .cardTitle {
-    font-size: 1.15rem;
-    margin-bottom: 10px;
-    color: var(--maroon-dark);
+    font-size: 1.6rem;
+    color: white;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
 }
 
-.cardDescription {
-    font-size: 0.9rem;
-    line-height: 1.7;
-    color: var(--text-body);
-    margin-bottom: 16px;
+.cardDesc {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
 }
 
-.cardLink {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 0.85rem;
-    color: var(--maroon);
-    transition: color var(--transition-fast);
-}
-
-.cardLink:hover {
-    color: var(--orange-light);
-}
-
-/* Feature banner */
-.featureBanner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    background: var(--bg-section);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    margin-top: 3rem;
-    box-shadow: var(--shadow-md);
-}
-
-.featureContent {
+/* --- End Card CTA --- */
+.endCard {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px dashed rgba(255, 255, 255, 0.2);
+    border-radius: var(--radius-md);
+    aspect-ratio: 4/5;
+    justify-content: center;
     padding: 3rem;
+    text-align: center;
+}
+
+.endCardContent {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
 }
 
-.featureTag {
-    font-family: var(--font-heading);
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--orange);
-    margin-bottom: 1rem;
+.endCardContent h3 {
+    font-size: 1.8rem;
+    color: white;
 }
 
-.featureContent h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-    color: var(--maroon-dark);
-}
-
-.featureContent p {
-    font-size: 0.95rem;
-    line-height: 1.8;
-}
-
-.featureImage {
-    position: relative;
-    overflow: hidden;
-}
-
-.featureImage img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Additional Projects Grid */
-.additionalGrid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    margin-top: 2rem;
-}
-
-.additionalCard {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    padding: 1.5rem;
-    background: white;
-    box-shadow: var(--shadow-sm);
-    transition: all var(--transition-smooth);
-}
-
-.additionalCard:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-}
-
-.additionalIcon {
-    font-size: 2rem;
-    flex-shrink: 0;
-}
-
-.additionalTag {
-    display: inline-block;
-    font-family: var(--font-heading);
-    font-size: 0.65rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--jci-red);
-    margin-bottom: 0.3rem;
-}
-
-.additionalTitle {
+.endCardContent p {
+    color: rgba(255, 255, 255, 0.7);
     font-size: 1rem;
-    color: var(--jci-navy);
-    margin-bottom: 0.4rem;
-}
-
-.additionalDesc {
-    font-size: 0.85rem;
     line-height: 1.6;
-    color: var(--text-body);
 }
 
-/* Animations */
+/* --- Animations --- */
 .animateOnScroll {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .animateOnScroll.visible {
@@ -232,29 +181,43 @@
     transform: translateY(0);
 }
 
-@media (max-width: 968px) {
-    .header {
-        grid-template-columns: 1fr;
-        text-align: center;
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .headerContainer {
+        padding: 0 5vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .headerContainer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2rem;
     }
 
-    .subtitle {
-        text-align: center;
+    .carouselCard {
+        flex: 0 0 320px;
     }
 
-    .grid {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: -1rem;
+    .endCard {
+        aspect-ratio: auto;
+        padding: 2rem;
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carouselWrapper {
+        padding-left: 20px;
     }
 
-    .additionalGrid {
-        grid-template-columns: 1fr;
+    .carouselCard {
+        flex: 0 0 280px;
     }
 
-    .featureBanner {
-        grid-template-columns: 1fr;
+    .controlBtn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
     }
 }

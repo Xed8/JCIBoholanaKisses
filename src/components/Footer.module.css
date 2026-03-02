@@ -1,133 +1,140 @@
 .footer {
-    padding: 4rem 0 0;
-    background: var(--jci-red-dark);
+    padding: 6rem 0 0;
+    background: var(--jci-navy);
     color: white;
 }
 
 .grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 3rem;
-    padding-bottom: 3rem;
+    gap: 4rem;
+    padding-bottom: 4rem;
 }
 
 .brand {
-    max-width: 340px;
+    max-width: 380px;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
+    gap: 16px;
+    margin-bottom: 24px;
 }
 
 .logoImg {
-    width: 44px;
-    height: 44px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .logoName {
     display: block;
-    font-family: var(--font-heading);
-    font-weight: 800;
-    font-size: 0.95rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    font-size: 1.35rem;
+    line-height: 1.2;
 }
 
 .logoTagline {
     display: block;
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
     font-style: italic;
+    margin-top: 4px;
 }
 
 .brandDescription {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.6);
-    line-height: 1.7;
-    margin-bottom: 20px;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
+    margin-bottom: 32px;
 }
 
 .social {
     display: flex;
-    gap: 10px;
+    gap: 12px;
 }
 
 .socialLink {
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(255, 255, 255, 0.7);
-    transition: all var(--transition-fast);
+    color: rgba(255, 255, 255, 0.8);
+    transition: all var(--transition-smooth);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .socialLink:hover {
-    background: var(--gold);
+    background: var(--jci-red);
     color: white;
-    transform: translateY(-2px);
+    border-color: var(--jci-red);
+    transform: translateY(-3px);
 }
 
 .linksColumn h4 {
     font-size: 0.85rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 16px;
-    color: rgba(255, 255, 255, 0.9);
+    letter-spacing: 0.15em;
+    margin-bottom: 24px;
+    color: white;
 }
 
 .linksColumn ul {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 16px;
+    padding: 0;
+    margin: 0;
 }
 
 .linksColumn a,
 .linksColumn span {
-    font-size: 0.85rem;
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
     transition: color var(--transition-fast);
 }
 
 .linksColumn a:hover {
-    color: var(--gold);
+    color: white;
 }
 
 .bottom {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 0;
+    padding: 24px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 16px;
 }
 
 .bottom p {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.5);
 }
 
 .bottom a {
-    color: var(--gold);
+    color: white;
+    font-weight: 600;
 }
 
 .bottom a:hover {
-    color: var(--text-white);
+    color: var(--jci-red);
 }
 
 @media (max-width: 968px) {
     .grid {
         grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+        gap: 3rem;
     }
 
     .brand {

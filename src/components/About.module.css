@@ -1,108 +1,100 @@
-.aboutWrapper {
+.aboutSection {
+    background: white;
+    padding: var(--section-padding) 0;
     position: relative;
-    /* We add padding top to ensure the negative margin overlap card has space */
-    padding-top: 6rem;
+    border-bottom: 1px solid var(--border-light);
 }
 
-/* --- Overlapping Card Container --- */
-.overlapCard {
-    position: relative;
-    z-index: 10;
-    margin-top: -120px;
-    /* Pull it up over the hero bottom gradient */
-    margin-bottom: 4rem;
-}
-
-.overlapContent {
-    background: var(--bg-card);
-    padding: 4rem 3rem;
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-lg);
-    text-align: center;
-    border: 1px solid var(--border-light);
-}
-
-.overlapTitle {
-    margin-bottom: 1.5rem;
-    font-size: clamp(2rem, 4vw, 3rem);
-}
-
-.overlapText {
-    max-width: 850px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-body);
-}
-
-/* --- About Main Area --- */
-.about {
-    background: transparent;
-    padding-top: 0;
-}
-
-/* --- Values Grid --- */
-.valuesGrid {
+.gridContainer {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin-bottom: 4rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 8rem;
+    align-items: flex-start;
+}
+
+/* --- Left Side: Editorial Typography --- */
+.editorialSide {
+    position: sticky;
+    top: 140px;
+    /* Sticks while scrolling past values */
+}
+
+.manifesto {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--jci-navy);
+    margin-bottom: 2rem;
+    text-transform: none;
+    /* Keep natural case for editorial feel */
+    font-weight: 800;
+}
+
+.highlight {
+    color: var(--jci-maroon);
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    height: 12px;
+    background: var(--accent-gold-light);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.pullQuoteContainer {
+    margin: 3rem 0;
+}
+
+/* --- Right Side: Values Cascade --- */
+.valuesSide {
+    padding-top: 2rem;
+}
+
+.valuesSticky {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 .valueCard {
-    padding: 2.5rem 1.5rem;
-    text-align: center;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 1px solid var(--border-light);
+    gap: 2rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--border-light);
 }
 
-.valueCard h4 {
-    margin: 16px 0 10px;
-    font-size: 1.1rem;
+.valueCard:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.valueIndex {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    line-height: 0.8;
+    font-weight: 900;
+    color: var(--jci-maroon);
+    opacity: 0.2;
+}
+
+.valueTitle {
+    font-size: 1.6rem;
     color: var(--jci-navy);
+    margin-bottom: 1rem;
+    text-transform: none;
 }
 
-.valueCard p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: var(--text-muted);
-}
-
-.valueEmoji {
-    font-size: 2.5rem;
-    margin-bottom: 8px;
-    background: rgba(10, 25, 47, 0.03);
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-}
-
-/* --- Photo Section --- */
-.photoSection {
-    border: 1px solid var(--border-light);
-}
-
-.groupPhoto {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.photoCaption {
-    background: var(--jci-navy);
-    color: white;
-    padding: 20px 24px;
-    font-size: 0.95rem;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: 0.05em;
+.valueDesc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-body);
 }
 
 /* --- Animations --- */
@@ -117,31 +109,28 @@
     transform: translateY(0);
 }
 
-/* --- Responsive Adjustments --- */
+/* --- Responsive Layout --- */
 @media (max-width: 1024px) {
-    .valuesGrid {
-        grid-template-columns: repeat(2, 1fr);
+    .gridContainer {
+        grid-template-columns: 1fr;
+        gap: 5rem;
+    }
+
+    .editorialSide {
+        position: static;
+    }
+
+    .valuesSide {
+        padding-top: 0;
     }
 }
 
 @media (max-width: 768px) {
-    .overlapCard {
-        margin-top: -80px;
-        padding-left: 1rem;
-        padding-right: 1rem;
+    .manifesto {
+        font-size: 3rem;
     }
 
-    .overlapContent {
-        padding: 3rem 1.5rem;
-    }
-
-    .valuesGrid {
-        gap: 16px;
-    }
-}
-
-@media (max-width: 576px) {
-    .valuesGrid {
-        grid-template-columns: 1fr;
+    .valueIndex {
+        font-size: 2.5rem;
     }
 }

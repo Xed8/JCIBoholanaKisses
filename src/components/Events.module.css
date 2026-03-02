@@ -1,91 +1,121 @@
 .events {
-    background: white;
+    background: var(--bg-body);
+    padding: 6rem 0;
 }
 
 .header {
-    text-align: center;
-    margin-bottom: 3rem;
+    text-align: left;
+    margin-bottom: 4rem;
+    border-bottom: 1px solid rgba(18, 30, 60, 0.2);
+    padding-bottom: 2rem;
+}
+
+.header h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: var(--jci-navy);
+    font-family: 'Playfair Display', Georgia, serif;
+    line-height: 1.1;
+    margin-top: 0.5rem;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card {
-    display: flex;
-    background: var(--bg-section);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    transition: all var(--transition-smooth);
-    border: 1px solid transparent;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    padding: 3rem 0;
+    background: transparent;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid rgba(18, 30, 60, 0.1);
+    transition: transform 0.4s ease;
+    align-items: flex-start;
+}
+
+.card:last-child {
+    border-bottom: none;
 }
 
 .card:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-    border-color: var(--maroon);
+    transform: translateX(10px);
+    box-shadow: none;
+    border-color: rgba(18, 30, 60, 0.1);
 }
 
 .cardDate {
-    background: var(--maroon-dark);
-    color: white;
-    padding: 24px 20px;
+    background: transparent;
+    color: var(--jci-navy);
+    border: none;
+    padding: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 120px;
-    font-family: var(--font-heading);
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: 'Playfair Display', Georgia, serif;
     font-weight: 700;
-    font-size: 0.82rem;
-    text-align: center;
-    line-height: 1.4;
+    font-size: 2rem;
+    line-height: 1.2;
+    text-align: left;
+    min-width: unset;
+}
+
+.cardDate span {
+    display: block;
 }
 
 .cardBody {
-    padding: 24px;
+    padding: 0;
     flex: 1;
 }
 
 .cardType {
     font-family: var(--font-heading);
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
-    color: var(--maroon);
-    margin-bottom: 6px;
-    display: block;
+    letter-spacing: 0.15em;
+    color: var(--jci-red);
+    margin-bottom: 0.75rem;
+    display: inline-block;
 }
 
 .cardBody h3 {
-    font-size: 1.05rem;
-    margin-bottom: 8px;
-    color: var(--navy);
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--jci-navy);
+    font-weight: 700;
 }
 
 .cardBody p {
-    font-size: 0.88rem;
-    line-height: 1.6;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1.25rem;
+    color: var(--text-body);
+    max-width: 800px;
 }
 
 .cardLocation {
-    font-size: 0.8rem;
-    color: var(--text-muted);
+    font-size: 0.95rem;
+    color: var(--jci-navy);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
 }
 
 .cta {
-    text-align: center;
-    margin-top: 2.5rem;
+    text-align: left;
+    margin-top: 4rem;
+    padding-top: 2rem;
 }
 
 /* Animations */
 .animateOnScroll {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: translateY(20px);
+    transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .animateOnScroll.visible {
@@ -94,16 +124,13 @@
 }
 
 @media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
     .card {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2.5rem 0;
     }
 
     .cardDate {
-        min-width: unset;
-        padding: 16px;
+        font-size: 2.2rem;
     }
 }
