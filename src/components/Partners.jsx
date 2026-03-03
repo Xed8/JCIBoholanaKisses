@@ -19,13 +19,6 @@ const partnerChapters = [
     'JCI Surigao North',
 ];
 
-const corporatePartners = [
-    { name: 'Brunched by Chill Pill Cafe', type: 'Community Partner' },
-    { name: 'Sherwood Bay Resort', type: 'Event Partner' },
-    { name: "Yokoy's Cafe", type: 'Venue Partner' },
-    { name: 'Mezzo Hotel, Cebu', type: 'Conference Venue' },
-];
-
 export default function Partners() {
     const sectionRef = useRef(null);
 
@@ -68,25 +61,7 @@ export default function Partners() {
                     ))}
                 </div>
 
-                {/* Corporate Partners */}
-                <div className={`${styles.corporateSection} ${styles.animateOnScroll}`}>
-                    <h4 className={styles.corporateTitle}>Community & Venue Partners</h4>
-                    <div className={styles.corporateGrid}>
-                        {corporatePartners.map((partner) => (
-                            <div key={partner.name} className={styles.corporateCard}>
-                                <span className={styles.corporateType}>{partner.type}</span>
-                                <span className={styles.corporateName}>{partner.name}</span>
-                            </div>
-                        ))}
-                    </div>
-                </div>
 
-                <div className={`${styles.cta} ${styles.animateOnScroll}`}>
-                    <p>Interested in collaborating with our chapter?</p>
-                    <a href="#contact" className="btn btn-primary">
-                        Partner With Us
-                    </a>
-                </div>
             </div>
         </section>
     );
