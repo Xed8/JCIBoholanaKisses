@@ -4,25 +4,19 @@ import { useEffect, useRef } from 'react';
 import styles from './Partners.module.css';
 
 const partnerChapters = [
-    'JCI Abuyog',
-    'JCI Alangalang',
-    'JCI Baliwag Buntal',
-    'JCI Bataan',
-    'JCI Binangonan',
     'JCI Bohol Sandugo',
-    'JCI Burauen Burabod',
-    'JCI Caloocan Bantayog',
-    'JCI Cagayan De Oro',
-    'JCI Carmona',
-    'JCI Catbalogan Balud',
-    'JCI Cauayan Bamboo',
+    'JCI Cebu Inc.',
+    'JCI Metro Cebu Uptown',
+    'JCI Mandaue',
+    'JCI Surigao Nickel',
+    'JCI Davao Inc.',
+    'JCI Angeles City Culiat',
+    'JCI Tanauan Pasaka',
+    'JCI Makati',
+    'JCI Bataan',
     'JCI Cebu Mactan Channel',
-    'JCI Bulawan',
-    'JCI Daet Kabihug',
-    'JCI Dagupeñas',
-    'JCI Damas',
-    'JCI San Pedro',
-    'JCI Manila',
+    'JCI San Pablo 7 Lakes',
+    'JCI Surigao North',
 ];
 
 const corporatePartners = [
