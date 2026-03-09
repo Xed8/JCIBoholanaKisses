@@ -49,13 +49,19 @@
 }
 
 .contactIcon {
-    font-size: 1.75rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: grid;
+    place-items: center;
     color: var(--jci-red);
     flex-shrink: 0;
-    margin-top: -4px;
 }
 
-/* Form */
+.contactIcon svg {
+    width: 24px;
+    height: 24px;
+}
+
 .formWrapper {
     background: var(--jci-navy);
     border-radius: 0;
@@ -68,7 +74,7 @@
     margin-bottom: 2rem;
     font-size: 2rem;
     color: white;
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: var(--font-display);
     font-weight: 400;
 }
 
@@ -92,10 +98,8 @@
     width: 100%;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.05);
-    /* slightly transparent white */
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 0;
-    /* square edges for editorial look */
     color: white;
     font-family: var(--font-body);
     font-size: 1rem;
@@ -138,14 +142,13 @@
     background: #a00000;
 }
 
-/* Animations */
 .animateOnScroll {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.animateOnScroll.visible {
+.visible {
     opacity: 1;
     transform: translateY(0);
 }

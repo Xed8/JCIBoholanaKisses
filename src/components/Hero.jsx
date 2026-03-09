@@ -3,15 +3,20 @@
 import styles from './Hero.module.css';
 import heroBgImg from '../../public/images/group-photo.jpg';
 import coverImg from '../../public/images/cover.jpg';
+import { heroContent, impactStats } from '@/content/homeContent';
 
 export default function Hero() {
+    const heroStats = [impactStats[0], impactStats[1], impactStats[3]];
+
     return (
         <section id="home" className={styles.hero}>
-            {/* Cinematic Background Layer */}
             <div className={styles.heroBg}>
                 <img
                     src={heroBgImg.src}
-                    onError={(e) => { e.target.onerror = null; e.target.src = coverImg.src }}
+                    onError={(event) => {
+                        event.target.onerror = null;
+                        event.target.src = coverImg.src;
+                    }}
                     alt="JCI Boholana Kisses Chapter Members"
                     className={styles.heroBgImg}
                 />
@@ -22,16 +27,20 @@ export default function Hero() {
             <div className={`container ${styles.heroContent}`}>
                 <div className={styles.textGrid}>
                     <div className={styles.badgeCol}>
-                        <span className={styles.heroBadge}>JCI Boholana Kisses • Tagbilaran</span>
-                        <p className={styles.subtitle}>
-                            The all women–LGBTQ++ chapter of JCI Philippines — developing inclusive leaders who create lasting impact through service, advocacy, and community action.
-                        </p>
+                        <span className={styles.heroBadge}>
+                            {heroContent.overline} - {heroContent.issue} - {heroContent.date}
+                        </span>
+                        <p className={styles.subtitle}>{heroContent.subtitle}</p>
+
                         <div className={styles.actions}>
-                            <a href="#programs" className={`btn btn-primary ${styles.ctaBtn}`}>
-                                View Projects
+                            <a href={heroContent.primaryAction.href} className={`btn btn-primary ${styles.ctaBtn}`}>
+                                {heroContent.primaryAction.label}
                             </a>
-                            <a href="https://www.facebook.com/JCIBoholanaKisses" target="_blank" rel="noopener noreferrer" className={`btn btn-outline ${styles.ctaOutline}`}>
-                                Join Us
+                            <a
+                                href={heroContent.secondaryAction.href}
+                                className={`btn btn-outline ${styles.ctaOutline}`}
+                            >
+                                {heroContent.secondaryAction.label}
                             </a>
                         </div>
                     </div>
@@ -41,29 +50,25 @@ export default function Hero() {
                             <span className={styles.titleLine1}>Empowering</span>
                             <span className={styles.titleLine2}>Leaders.</span>
                         </h1>
-                        <span className={styles.titleAccent}>Transforming Communities.</span>
+                        <span className={styles.titleAccent}>Chapter, voices, and impact in motion.</span>
                     </div>
                 </div>
 
-                {/* Bottom Anchored Stats */}
                 <div className={styles.bottomBar}>
                     <div className={styles.statGroup}>
-                        <div className={styles.statItem}>
-                            <span className={styles.statNumber}>5.7K</span>
-                            <span className={styles.statLabel}>Followers</span>
-                        </div>
-                        <div className={styles.statItem}>
-                            <span className={styles.statNumber}>18+</span>
-                            <span className={styles.statLabel}>Partner Chapters</span>
-                        </div>
-                        <div className={styles.statItem}>
-                            <span className={styles.statNumber}>2009</span>
-                            <span className={styles.statLabel}>Established</span>
-                        </div>
+                        {heroStats.map((stat) => (
+                            <div key={stat.label} className={styles.statItem}>
+                                <span className={styles.statNumber}>
+                                    {stat.value}
+                                    {stat.suffix}
+                                </span>
+                                <span className={styles.statLabel}>{stat.label}</span>
+                            </div>
+                        ))}
                     </div>
 
                     <a href="#about" className={styles.scrollIndicator}>
-                        <span className={styles.scrollText}>Scroll to discover</span>
+                        <span className={styles.scrollText}>Scroll to chapter</span>
                         <div className={styles.scrollLine}></div>
                     </a>
                 </div>

@@ -33,14 +33,7 @@
     margin-bottom: 1.5rem;
 }
 
-.badge::before {
-    content: '';
-    width: 40px;
-    height: 3px;
-    background: var(--accent-gold);
-    border-radius: var(--radius-full);
-}
-
+.badge::before,
 .badge::after {
     content: '';
     width: 40px;
@@ -52,7 +45,7 @@
 .title {
     color: white;
     font-size: clamp(2.2rem, 5vw, 3.5rem);
-    text-transform: uppercase;
+    text-transform: none;
     margin-bottom: 1rem;
 }
 
@@ -70,7 +63,7 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 2rem;
     max-width: 960px;
     margin: 0 auto;
@@ -80,15 +73,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 8px;
+    gap: 0.8rem;
     padding: 2.5rem 1.5rem;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: var(--radius-lg);
     backdrop-filter: blur(8px);
-    transition: transform var(--transition-smooth), background var(--transition-smooth);
     opacity: 0;
     transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease, background var(--transition-smooth);
 }
 
 .visible .card {
@@ -117,17 +110,16 @@
     background: rgba(255, 255, 255, 0.08);
 }
 
-.icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
 .statNumber {
     font-family: var(--font-heading);
     font-size: clamp(2.5rem, 5vw, 3.5rem);
     font-weight: 900;
     color: white;
     line-height: 1;
+}
+
+.statAccent {
+    color: white;
 }
 
 .statLabel {
@@ -138,10 +130,9 @@
     letter-spacing: 0.12em;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
     .grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 1.5rem;
     }
 }

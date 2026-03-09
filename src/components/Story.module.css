@@ -1,150 +1,135 @@
 .story {
     padding: var(--section-padding) 0;
-    background: var(--bg-section);
+    background: #f7f6f2;
 }
 
 .header {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 4rem;
+    max-width: 48rem;
+    margin-bottom: 3rem;
 }
 
 .header h2 {
-    font-size: clamp(2rem, 4.5vw, 3.2rem);
-    color: var(--jci-navy);
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    text-transform: none;
 }
 
 .intro {
-    color: var(--text-body);
-    font-size: 1.05rem;
-    line-height: 1.9;
     margin-top: 1rem;
-}
-
-/* --- Timeline / Editorial Layout --- */
-.timeline {
-    display: flex;
-    flex-direction: column;
-    gap: 5rem;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem 0;
-}
-
-.timelineItem {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.timelineItem:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
-.yearColumn {
-    flex: 1;
-    font-family: var(--font-heading);
-    font-size: clamp(6rem, 15vw, 10rem);
-    font-weight: 800;
-    color: transparent;
-    -webkit-text-stroke: 2px rgba(18, 30, 60, 0.1);
-    /* Very subtle navy outline */
-    line-height: 1;
-    text-align: right;
-    user-select: none;
-    letter-spacing: -4px;
-}
-
-.timelineItem:nth-child(even) .yearColumn {
-    text-align: left;
-}
-
-.contentColumn {
-    flex: 1.2;
-    position: relative;
-    z-index: 2;
-    margin-left: 2rem;
-}
-
-.timelineItem:nth-child(even) .contentColumn {
-    margin-left: 0;
-    margin-right: 2rem;
-}
-
-.timelineCard {
-    background: white;
-    padding: 2.5rem;
-    border-left: 4px solid var(--jci-red);
-    box-shadow: var(--shadow-md);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.timelineItem:nth-child(even) .timelineCard {
-    border-left: none;
-    border-right: 4px solid var(--jci-red);
-}
-
-.timelineCard:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.timelineCard h3 {
-    font-size: 1.5rem;
-    color: var(--jci-navy);
-    margin-bottom: 1rem;
-    font-weight: 700;
-}
-
-.timelineCard p {
-    font-size: 1.05rem;
+    font-size: 1.08rem;
     line-height: 1.8;
-    color: var(--text-body);
 }
 
-/* Animations */
+.milestoneGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.milestoneCard {
+    display: grid;
+    gap: 0.85rem;
+    padding: 1.8rem;
+    background: #fff;
+    border: 1px solid rgba(10, 25, 47, 0.08);
+    box-shadow: var(--shadow-sm);
+}
+
+.year {
+    color: var(--jci-maroon);
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    line-height: 1;
+}
+
+.milestoneCard h3 {
+    font-size: 1.3rem;
+    text-transform: none;
+}
+
+.milestoneCard p {
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.heritageBlock {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(10, 25, 47, 0.1);
+}
+
+.heritageHeader {
+    max-width: 42rem;
+    margin-bottom: 1.5rem;
+}
+
+.heritageLabel {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: var(--jci-maroon);
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.heritageHeader h3 {
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    text-transform: none;
+}
+
+.presidentStrip {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.presidentCard {
+    display: grid;
+    gap: 0.4rem;
+    padding: 1.15rem;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(10, 25, 47, 0.08);
+}
+
+.presidentYears {
+    color: var(--text-muted);
+    font-family: var(--font-heading);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.presidentCard strong {
+    color: var(--jci-navy);
+    font-size: 1rem;
+    line-height: 1.45;
+}
+
 .animateOnScroll {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(24px);
     transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.animateOnScroll.visible {
+.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-
-    .timelineItem,
-    .timelineItem:nth-child(even) {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0;
+@media (max-width: 900px) {
+    .milestoneGrid {
+        grid-template-columns: 1fr;
     }
 
-    .yearColumn,
-    .timelineItem:nth-child(even) .yearColumn {
-        text-align: left;
-        font-size: 5rem;
-        -webkit-text-stroke: 1px rgba(18, 30, 60, 0.15);
-        margin-bottom: 0.5rem;
-        z-index: 1;
-        letter-spacing: -2px;
+    .presidentStrip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+}
 
-    .contentColumn,
-    .timelineItem:nth-child(even) .contentColumn {
-        margin: 0;
-        width: 100%;
-        padding-left: 1rem;
-    }
-
-    .timelineCard,
-    .timelineItem:nth-child(even) .timelineCard {
-        border-left: 4px solid var(--jci-red) !important;
-        border-right: none !important;
-        padding: 1.5rem;
+@media (max-width: 520px) {
+    .presidentStrip {
+        grid-template-columns: 1fr;
     }
 }

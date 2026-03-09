@@ -1,16 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './Navbar.module.css';
 import logoImg from '../../public/images/logo.jpg';
-
-const navLinks = [
-  { label: 'HOME', href: '#home' },
-  { label: 'ABOUT', href: '#about' },
-  { label: 'PROGRAMS', href: '#programs' },
-  { label: 'EVENTS', href: '#events' },
-  { label: 'CONTACT', href: '#contact' },
-];
+import { navigationLinks } from '@/content/homeContent';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,23 +12,30 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 60);
-      const sections = navLinks.map(l => l.href.replace('#', ''));
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sections[i]);
-        if (el && el.getBoundingClientRect().top <= 120) {
+      setScrolled(window.scrollY > 48);
+
+      const sections = navigationLinks.map((link) => link.href.replace('#', ''));
+
+      for (let i = sections.length - 1; i >= 0; i -= 1) {
+        const element = document.getElementById(sections[i]);
+
+        if (element && element.getBoundingClientRect().top <= 140) {
           setActiveSection(sections[i]);
           break;
         }
       }
     };
+
+    handleScroll();
     window.addEventListener('scroll', handleScroll);
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleLinkClick = (e, href) => {
-    e.preventDefault();
+  const handleLinkClick = (event, href) => {
+    event.preventDefault();
     setMobileOpen(false);
+
     const target = document.querySelector(href);
     if (target) target.scrollIntoView({ behavior: 'smooth' });
   };
@@ -43,7 +43,7 @@ export default function Navbar() {
   return (
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.navContainer}`}>
-        <a href="#home" className={styles.logo} onClick={(e) => handleLinkClick(e, '#home')}>
+        <a href="#home" className={styles.logo} onClick={(event) => handleLinkClick(event, '#home')}>
           <img src={logoImg.src} alt="JCI Boholana Kisses Logo" className={styles.logoImg} />
           <div className={styles.logoText}>
             <span className={styles.logoName}>JCI Boholana Kisses</span>
@@ -51,34 +51,32 @@ export default function Navbar() {
         </a>
 
         <div className={`${styles.navLinks} ${mobileOpen ? styles.open : ''}`}>
-          {navLinks.map((link) => (
+          {navigationLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className={`${styles.navLink} ${activeSection === link.href.replace('#', '') ? styles.active : ''}`}
-              onClick={(e) => handleLinkClick(e, link.href)}
+              className={`${styles.navLink} ${
+                activeSection === link.href.replace('#', '') ? styles.active : ''
+              }`}
+              onClick={(event) => handleLinkClick(event, link.href)}
             >
               {link.label}
             </a>
           ))}
-          <a
-            href="https://www.facebook.com/JCIBoholanaKisses"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`btn btn-primary ${styles.navCta}`}
-          >
-            JOIN US
+
+          <a href="#contact" className={`btn btn-primary ${styles.navCta}`}>
+            Contact
           </a>
         </div>
 
         <button
           className={`${styles.hamburger} ${mobileOpen ? styles.hamburgerOpen : ''}`}
-          onClick={() => setMobileOpen(!mobileOpen)}
+          onClick={() => setMobileOpen((value) => !value)}
           aria-label="Toggle menu"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span />
+          <span />
+          <span />
         </button>
       </div>
     </nav>

@@ -1,7 +1,7 @@
-/* ===== JCI Boholana Kisses — Design System (JCI Modern Theme) ===== */
+/* ===== JCI Boholana Kisses — Editorial Magazine Theme ===== */
 
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Poppins:wght@400;500;600&display=swap');
+/* Google Fonts - Editorial Pair */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
 
 /* ===== CSS Custom Properties ===== */
 :root {
@@ -29,17 +29,20 @@
   /* Theme neutrals */
   --bg-primary: #F8F9FA;
   --bg-warm: #F0EEE9;
+  --bg-body: #FBFAF7;
+  --bg-section: #F7F6F2;
   --bg-card: #FFFFFF;
 
-  --text-dark: #0A192F;
-  --text-body: #495057;
+  --text-dark: #050505;
+  --text-body: #3A3A3A;
   --text-muted: #868E96;
   --text-white: #FFFFFF;
-  --border-light: rgba(0, 0, 0, 0.05);
+  --border-light: rgba(0, 0, 0, 0.08);
 
   /* Typography */
-  --font-heading: 'Montserrat', sans-serif;
-  --font-body: 'Poppins', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Playfair Display', serif;
 
   /* Spacing */
   --section-padding: clamp(4rem, 8vw, 7rem);
@@ -79,9 +82,10 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: var(--bg-primary);
+  background: var(--bg-card);
   color: var(--text-dark);
-  line-height: 1.7;
+  line-height: 1.6;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -102,13 +106,16 @@ h6 {
 }
 
 h1 {
-  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
   text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: 1;
 }
 
 h2 {
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 6vw, 4rem);
   text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 h3 {
@@ -138,10 +145,10 @@ img {
 /* ===== Editorial Typography Utilities ===== */
 .text-overline {
   font-family: var(--font-heading);
-  font-size: 0.85rem;
-  font-weight: 800;
+  font-size: 0.8rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
   color: var(--jci-maroon);
   display: block;
   margin-bottom: 1rem;

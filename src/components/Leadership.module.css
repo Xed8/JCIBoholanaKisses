@@ -4,112 +4,122 @@
 }
 
 .header {
-    text-align: center;
-    margin-bottom: 3rem;
+    max-width: 48rem;
+    margin-bottom: 2.5rem;
 }
 
 .header h2 {
-    font-size: clamp(2rem, 4.5vw, 3.2rem);
-    color: var(--jci-navy);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    text-transform: none;
 }
 
-/* President Card - Editorial Style */
+.intro {
+    margin-top: 1rem;
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+.groupFigure {
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+    background: #f4efe8;
+    box-shadow: var(--shadow-md);
+}
+
+.groupImage {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.groupCaption {
+    display: grid;
+    gap: 0.3rem;
+    padding: 1rem 1.25rem 1.25rem;
+    background: white;
+    border-top: 1px solid rgba(10, 25, 47, 0.08);
+}
+
+.groupCaption strong {
+    color: var(--jci-navy);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.groupCaption span {
+    color: var(--text-body);
+    line-height: 1.7;
+}
+
 .presidentCard {
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 4rem;
+    grid-template-columns: minmax(280px, 0.9fr) 1.1fr;
+    gap: 2.5rem;
     align-items: center;
-    background: transparent;
-    margin-bottom: 5rem;
-    box-shadow: none;
-    border-top: 2px solid var(--jci-navy);
-    padding-top: 3rem;
-    border-radius: 0;
+    padding: 2.25rem 0;
+    margin-bottom: 2rem;
+    border-top: 1px solid rgba(10, 25, 47, 0.1);
+    border-bottom: 1px solid rgba(10, 25, 47, 0.1);
 }
 
 .presidentPhoto {
-    width: 100%;
-    height: 100%;
-    min-height: 450px;
-    overflow: hidden;
-    position: relative;
+    background: #ece6dc;
 }
 
 .presidentPhoto img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 4 / 5;
     object-fit: cover;
     object-position: center top;
 }
 
-.presidentInfo {
-    padding: 2rem 0;
-}
-
 .presidentRole {
     display: inline-block;
+    margin-bottom: 0.9rem;
+    color: var(--jci-maroon);
     font-family: var(--font-heading);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--jci-red);
-    margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
 .presidentName {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    color: var(--jci-navy);
-    margin-bottom: 1.5rem;
-    font-family: 'Playfair Display', Georgia, serif;
-    line-height: 1.1;
+    font-size: clamp(2.3rem, 5vw, 3.8rem);
+    line-height: 0.95;
+    text-transform: none;
 }
 
 .presidentDesc {
-    font-size: 1.15rem;
+    margin-top: 1.25rem;
+    font-size: 1.08rem;
     line-height: 1.8;
-    color: var(--text-body);
 }
 
-/* Board Title */
 .boardTitle {
-    text-align: left;
-    font-size: 1.5rem;
-    color: var(--jci-navy);
-    margin-bottom: 2.5rem;
-    font-family: 'Playfair Display', Georgia, serif;
-    border-bottom: 1px solid rgba(18, 30, 60, 0.1);
-    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
 }
 
-/* Board Grid */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 3rem 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 1.5rem;
 }
 
 .card {
-    background: transparent;
-    padding: 0;
-    text-align: left;
-    box-shadow: none;
-    transition: transform var(--transition-smooth);
+    display: grid;
+    gap: 0.85rem;
 }
 
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: none;
-}
-
-/* Photo wrapper */
 .cardPhotoWrapper {
-    width: 100%;
-    aspect-ratio: 4 / 5;
     overflow: hidden;
-    background: #f0f0f5;
-    position: relative;
-    margin-bottom: 1.25rem;
+    background: #f2f0eb;
+    aspect-ratio: 4 / 5;
 }
 
 .cardPhoto {
@@ -117,76 +127,55 @@
     height: 100%;
     object-fit: cover;
     object-position: center top;
-    transition: transform 0.5s ease;
-    filter: grayscale(20%);
-    /* slight desat for premium look */
+    transition: transform var(--transition-smooth);
 }
 
 .card:hover .cardPhoto {
     transform: scale(1.03);
-    filter: grayscale(0%);
 }
 
-/* Initials fallback */
 .cardInitials {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: rgba(10, 25, 47, 0.2);
     font-family: var(--font-heading);
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     font-weight: 800;
-    color: rgba(18, 30, 60, 0.1);
-    letter-spacing: 0.05em;
 }
 
 .cardName {
-    font-size: 1.1rem;
-    color: var(--jci-navy);
-    margin-bottom: 0.35rem;
-    font-weight: 700;
+    font-size: 1.05rem;
+    text-transform: none;
 }
 
 .cardRole {
-    display: block;
-    font-family: var(--font-body);
-    font-size: 0.9rem;
     color: var(--text-body);
-    line-height: 1.4;
+    font-size: 0.95rem;
+    line-height: 1.55;
 }
 
-/* Animations */
 .animateOnScroll {
     opacity: 0;
     transform: translateY(24px);
     transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.animateOnScroll.visible {
+.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-@media (max-width: 968px) {
+@media (max-width: 900px) {
     .presidentCard {
         grid-template-columns: 1fr;
-        gap: 2rem;
-        text-align: left;
-    }
-
-    .presidentPhoto {
-        min-height: 350px;
-    }
-
-    .presidentInfo {
-        padding: 0;
     }
 }
 
-@media (max-width: 580px) {
+@media (max-width: 640px) {
     .grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
