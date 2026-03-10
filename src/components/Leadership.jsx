@@ -15,18 +15,22 @@ function getInitials(name) {
     .toUpperCase();
 }
 
-function BoardPortrait({ member }) {
+function BoardPortrait({
+  member,
+  photoClassName = styles.cardPhoto,
+  fallbackClassName = styles.cardInitials,
+}) {
   const [hasError, setHasError] = useState(false);
 
   if (!member.image || hasError) {
-    return <div className={styles.cardInitials}>{getInitials(member.name)}</div>;
+    return <div className={fallbackClassName}>{getInitials(member.name)}</div>;
   }
 
   return (
     <img
       src={member.image}
       alt={member.name}
-      className={styles.cardPhoto}
+      className={photoClassName}
       onError={() => setHasError(true)}
     />
   );
@@ -65,7 +69,7 @@ export default function Leadership() {
           <figure className={`${styles.groupFigure} ${styles.animateOnScroll}`}>
             <img
               src={leadershipContent.groupPhoto}
-              alt="JCI Boholana Kisses 2026 board group portrait"
+              alt="JCI Boholana Kisses 2026 board of directors"
               className={styles.groupImage}
             />
             <figcaption className={styles.groupCaption}>

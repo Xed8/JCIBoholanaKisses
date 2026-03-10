@@ -171,3 +171,46 @@
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 720px) {
+    .cta {
+        padding: clamp(4rem, 14vw, 5rem) 0;
+    }
+
+    .panel {
+        gap: 1rem;
+    }
+
+    .copy,
+    .actionPanel {
+        padding: 1.3rem;
+    }
+
+    .title {
+        max-width: none;
+        font-size: clamp(2.2rem, 11vw, 3.4rem);
+        line-height: 1.02;
+    }
+
+    .subtitle,
+    .actionNote {
+        font-size: 0.98rem;
+        line-height: 1.72;
+    }
+
+    .tagRow {
+        gap: 0.55rem;
+    }
+
+    .tagRow span {
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        padding: 0.5rem 0.7rem;
+    }
+
+    .btnMember,
+    .btnPartner,
+    .btnContact {
+        justify-content: center;
+    }
+}

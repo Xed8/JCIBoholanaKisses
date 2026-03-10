@@ -162,9 +162,41 @@
     }
 }
 
+@media (max-width: 720px) {
+    .header {
+        gap: 1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .headerCopy h2 {
+        font-size: clamp(2.1rem, 11vw, 3rem);
+        line-height: 1;
+    }
+
+    .headerCopy p,
+    .beliefItem p {
+        font-size: 0.98rem;
+        line-height: 1.72;
+    }
+
+    .summaryCard,
+    .creedCard,
+    .sideCard {
+        padding: 1.25rem;
+    }
+
+    .sideCard p {
+        font-size: 1.12rem;
+    }
+}
+
 @media (max-width: 560px) {
     .beliefItem {
         grid-template-columns: 1fr;
-        gap: 0.4rem;
+        gap: 0.45rem;
+    }
+
+    .beliefIndex {
+        font-size: 1.6rem;
     }
 }

@@ -34,7 +34,7 @@
     position: relative;
     overflow: hidden;
     min-height: 100%;
-    background: #1a2438;
+    background: linear-gradient(135deg, #58101d 0%, #871427 48%, #2f0a13 100%);
     border: 1px solid rgba(10, 25, 47, 0.08);
     box-shadow: var(--shadow-lg);
 }
@@ -53,6 +53,7 @@
     min-height: 28rem;
     aspect-ratio: 16 / 11;
     object-fit: cover;
+    object-position: center top;
 }
 
 .groupCaption {
@@ -369,6 +370,11 @@
         grid-template-columns: 1fr;
     }
 
+    .heroLayout,
+    .presidentCard {
+        gap: 1.25rem;
+    }
+
     .groupImage {
         min-height: 22rem;
     }
@@ -379,8 +385,33 @@
 }
 
 @media (max-width: 680px) {
+    .header {
+        margin-bottom: 2rem;
+    }
+
+    .intro,
+    .boardOverviewBody p,
+    .presidentDesc,
+    .boardSubtitle {
+        font-size: 0.98rem;
+        line-height: 1.72;
+    }
+
+    .groupImage {
+        min-height: 18rem;
+    }
+
+    .groupCaption strong {
+        font-size: 1.1rem;
+        line-height: 1.18;
+    }
+
+    .boardOverviewTitle {
+        font-size: clamp(1.7rem, 8vw, 2.1rem);
+    }
+
     .boardOverviewMeta {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .grid {
@@ -395,6 +426,10 @@
         bottom: 1rem;
     }
 
+    .groupImage {
+        min-height: 16.5rem;
+    }
+
     .boardOverview,
     .presidentCard,
     .card {
@@ -402,6 +437,31 @@
     }
 
     .boardOverviewMeta {
+        grid-template-columns: 1fr;
+    }
+
+    .presidentCard {
+        gap: 1rem;
+    }
+
+    .presidentName {
+        font-size: clamp(2rem, 12vw, 2.8rem);
+        line-height: 1;
+    }
+
+    .boardTitle {
+        font-size: 1.45rem;
+    }
+
+    .cardName {
+        font-size: 0.98rem;
+    }
+
+    .cardRole {
+        font-size: 0.72rem;
+    }
+
+    .grid {
         grid-template-columns: 1fr;
     }
 }

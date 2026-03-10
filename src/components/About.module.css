@@ -147,6 +147,7 @@
 @media (max-width: 960px) {
     .topGrid {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 
     .copyColumn {
@@ -155,11 +156,47 @@
 }
 
 @media (max-width: 640px) {
+    .title {
+        font-size: clamp(2.15rem, 10vw, 3rem);
+    }
+
+    .bodyCopy {
+        font-size: 1rem;
+        line-height: 1.72;
+    }
+
+    .imageCard img {
+        aspect-ratio: 4 / 4.8;
+    }
+
     .noteCard {
         padding: 1.5rem;
     }
 
+    .noteLead {
+        font-size: 1rem;
+        line-height: 1.72;
+    }
+
+    .noteExcerpt {
+        font-size: 1.16rem;
+    }
+
+    .noteAction {
+        width: 100%;
+        justify-self: stretch;
+    }
+
     .pullQuote {
         padding-left: 1.2rem;
+        margin-top: 1.5rem;
+    }
+
+    .quoteMark {
+        font-size: 3.4rem;
+    }
+
+    .pullQuote p {
+        font-size: clamp(1.2rem, 6vw, 1.55rem);
     }
 }

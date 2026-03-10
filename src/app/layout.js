@@ -1,6 +1,17 @@
 import './globals.css';
 
+const [repositoryOwner = '', repositoryName = ''] =
+  process.env.GITHUB_REPOSITORY?.split('/') ?? [];
+const basePath =
+  process.env.NEXT_PUBLIC_BASE_PATH ??
+  (process.env.GITHUB_ACTIONS === 'true' && repositoryName ? `/${repositoryName}` : '');
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ??
+  (repositoryOwner ? `https://${repositoryOwner}.github.io${basePath}` : 'http://localhost:3000');
+const openGraphImage = `${siteUrl}/images/otg/leadership/board-group.jpg`;
+
 export const metadata = {
+  metadataBase: new URL(siteUrl),
   title: 'JCI Boholana Kisses | Developing Leaders for a Changing World',
   description:
     'JCI Boholana Kisses is an all women-LGBTQ++ chapter of Junior Chamber International Philippines, based in Tagbilaran City, Bohol. Empowering future leaders through community projects, leadership training, and advocacy.',
@@ -22,6 +33,20 @@ export const metadata = {
       'An all women-LGBTQ++ chapter of JCI Philippines empowering future leaders in Bohol.',
     type: 'website',
     locale: 'en_PH',
+    url: siteUrl,
+    images: [
+      {
+        url: openGraphImage,
+        alt: 'JCI Boholana Kisses 2026 Board of Directors',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'JCI Boholana Kisses | Developing Leaders for a Changing World',
+    description:
+      'An all women-LGBTQ++ chapter of JCI Philippines empowering future leaders in Bohol.',
+    images: [openGraphImage],
   },
 };
 

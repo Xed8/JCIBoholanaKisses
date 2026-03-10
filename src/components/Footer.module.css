@@ -154,13 +154,49 @@
     }
 }
 
+@media (max-width: 720px) {
+    .footer {
+        padding-top: 4rem;
+    }
+
+    .grid {
+        gap: 1.5rem;
+        padding-bottom: 2.2rem;
+    }
+
+    .brand {
+        padding: 1.25rem;
+    }
+
+    .logo {
+        gap: 12px;
+    }
+
+    .logoImg {
+        width: 56px;
+        height: 56px;
+    }
+}
+
 @media (max-width: 520px) {
     .grid {
         grid-template-columns: 1fr;
     }
 
+    .logo {
+        align-items: flex-start;
+    }
+
+    .logoName {
+        font-size: 1.22rem;
+    }
+
     .bottom {
         flex-direction: column;
         text-align: center;
+    }
+
+    .bottom p {
+        width: 100%;
     }
 }

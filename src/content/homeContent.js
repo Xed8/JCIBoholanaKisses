@@ -237,9 +237,9 @@ export const leadershipContent = prefixImagePaths({
   title: 'The PRISTINE 2026 board of directors.',
   intro:
     'The Board of Directors of JCI Boholana Kisses is composed of passionate and committed leaders who guide the organization in fulfilling its mission of creating positive change in the community.',
-  groupPhoto: '/images/otg/leadership/board-group.jpg',
+  groupPhoto: '/images/photos-grid.jpg',
   groupPhotoCaption:
-    'The 2026 board portrait from the OTG issue anchors the chapter roster and the year ahead.',
+    'The 2026 board directors image anchors the chapter roster and the year ahead.',
   boardOverviewTitle: 'About the BOD',
   boardOverview: [
     'As part of the global network of Junior Chamber International, the Board ensures that the organization remains aligned with the values of leadership development, community service, and active citizenship.',

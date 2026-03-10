@@ -302,3 +302,15 @@ img {
   background: var(--jci-maroon);
   color: white;
 }
+
+@media (max-width: 560px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+
+  .text-overline {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    margin-bottom: 0.8rem;
+  }
+}

@@ -149,6 +149,10 @@
 }
 
 @media (max-width: 900px) {
+    .header {
+        margin-bottom: 2.2rem;
+    }
+
     .milestoneGrid {
         grid-template-columns: 1fr;
     }
@@ -158,8 +162,38 @@
     }
 }
 
+@media (max-width: 640px) {
+    .intro,
+    .heritageIntro,
+    .milestoneCard p {
+        font-size: 0.98rem;
+        line-height: 1.72;
+    }
+
+    .milestoneCard {
+        padding: 1.35rem;
+    }
+
+    .year {
+        font-size: 1.9rem;
+    }
+
+    .heritageBlock {
+        margin-top: 2.25rem;
+        padding-top: 1.6rem;
+    }
+}
+
 @media (max-width: 520px) {
     .presidentStrip {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .presidentCard {
+        padding: 0.7rem;
+    }
+
+    .presidentCard strong {
+        font-size: 0.94rem;
     }
 }

@@ -285,11 +285,38 @@
         padding: 1.25rem;
     }
 
+    .title {
+        font-size: clamp(2.2rem, 11vw, 3rem);
+        line-height: 1;
+    }
+
+    .deck,
+    .pillarLabel,
+    .leadLabel,
+    .articleLabel,
+    .visionLabel {
+        letter-spacing: 0.14em;
+    }
+
+    .lead {
+        font-size: clamp(1.2rem, 6vw, 1.55rem);
+        line-height: 1.58;
+    }
+
     .pillarCard,
     .leadPanel,
     .articleCard,
     .visionCard {
         padding: 1.35rem;
+    }
+
+    .body {
+        font-size: 0.98rem;
+        line-height: 1.76;
+    }
+
+    .visionText {
+        font-size: clamp(1.12rem, 6vw, 1.4rem);
     }
 
     .leadPanel::before {

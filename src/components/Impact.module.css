@@ -292,6 +292,43 @@
     }
 }
 
+@media (max-width: 720px) {
+    .impact {
+        padding: clamp(4rem, 14vw, 5rem) 0;
+    }
+
+    .title {
+        font-size: clamp(2.1rem, 11vw, 3rem);
+        line-height: 1;
+    }
+
+    .subtitle,
+    .summaryText,
+    .featureText {
+        font-size: 0.98rem;
+        line-height: 1.72;
+    }
+
+    .summaryCard,
+    .featureCard,
+    .metricCard {
+        padding: 1.25rem;
+    }
+
+    .featureCard {
+        gap: 1.5rem;
+        min-height: auto;
+    }
+
+    .featureNumber {
+        font-size: clamp(3rem, 16vw, 4.4rem);
+    }
+
+    .cardIndex {
+        font-size: 1.4rem;
+    }
+}
+
 @media (max-width: 560px) {
     .summaryCard,
     .featureCard,
@@ -302,5 +339,18 @@
     .featureCard {
         gap: 2rem;
         min-height: auto;
+    }
+
+    .metricCard {
+        min-height: auto;
+    }
+
+    .metricNumber {
+        font-size: 2.35rem;
+    }
+
+    .statLabel,
+    .cardTag {
+        letter-spacing: 0.12em;
     }
 }

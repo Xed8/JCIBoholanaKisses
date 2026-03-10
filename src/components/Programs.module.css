@@ -176,11 +176,47 @@
     .reverse .media {
         order: 0;
     }
+
+    .media {
+        min-height: auto;
+    }
+
+    .projectImage {
+        min-height: 16rem;
+        aspect-ratio: 4 / 3;
+    }
 }
 
 @media (max-width: 640px) {
     .body {
+        padding: 1.25rem;
+    }
+
+    .placeholder {
+        min-height: 15rem;
         padding: 1.5rem;
+    }
+
+    .placeholder strong,
+    .body h3 {
+        font-size: clamp(1.65rem, 9vw, 2.2rem);
+        line-height: 1.04;
+    }
+
+    .summary {
+        font-size: 1.15rem;
+        line-height: 1.56;
+    }
+
+    .detailStack p,
+    .footerNote p {
+        font-size: 0.98rem;
+        line-height: 1.72;
+    }
+
+    .highlights li {
+        font-size: 0.68rem;
+        letter-spacing: 0.06em;
     }
 
     .footerNote {
