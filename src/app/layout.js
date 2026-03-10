@@ -8,7 +8,7 @@ const basePath =
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, '') ??
   (repositoryOwner ? `https://${repositoryOwner}.github.io${basePath}` : 'http://localhost:3000');
-const openGraphImage = `${siteUrl}/images/photos-grid.jpg`;
+const openGraphImage = `${siteUrl}/images/photos-grid.jpg?v=20260310`;
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -37,6 +37,8 @@ export const metadata = {
     images: [
       {
         url: openGraphImage,
+        width: 2048,
+        height: 2048,
         alt: 'JCI Boholana Kisses photo grid',
       },
     ],
