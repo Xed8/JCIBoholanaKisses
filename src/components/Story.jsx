@@ -1,8 +1,37 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './Story.module.css';
 import { legacyContent, milestones, pastPresidents } from '@/content/homeContent';
+
+function getInitials(name) {
+  return name
+    .replace(/^Ma\.\s*/i, '')
+    .split(' ')
+    .filter((word) => word.length > 1)
+    .slice(0, 2)
+    .map((word) => word[0])
+    .join('')
+    .toUpperCase();
+}
+
+function PresidentPortrait({ president }) {
+  const [hasError, setHasError] = useState(false);
+
+  if (!president.photo || hasError) {
+    return <div className={styles.presidentFallback}>{getInitials(president.name)}</div>;
+  }
+
+  return (
+    <img
+      src={president.photo}
+      alt={president.name}
+      className={styles.presidentPhoto}
+      loading="lazy"
+      onError={() => setHasError(true)}
+    />
+  );
+}
 
 export default function Story() {
   const sectionRef = useRef(null);
@@ -50,11 +79,18 @@ export default function Story() {
           <div className={styles.heritageHeader}>
             <span className={styles.heritageLabel}>Past presidents</span>
             <h3>The chapter line that carried Boholana Kisses into the current term.</h3>
+            <p className={styles.heritageIntro}>
+              The magazine pairs the chapter timeline with the women who shaped it. The web version
+              brings that spread back as a portrait wall instead of a names-only list.
+            </p>
           </div>
 
           <div className={styles.presidentStrip}>
             {pastPresidents.map((president) => (
               <article key={`${president.years}-${president.name}`} className={styles.presidentCard}>
+                <div className={styles.presidentMedia}>
+                  <PresidentPortrait president={president} />
+                </div>
                 <span className={styles.presidentYears}>{president.years}</span>
                 <strong>{president.name}</strong>
               </article>

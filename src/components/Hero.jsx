@@ -26,32 +26,30 @@ export default function Hero() {
             </div>
 
             <div className={`container ${styles.heroContent}`}>
-                <div className={styles.textGrid}>
-                    <div className={styles.badgeCol}>
-                        <span className={styles.heroBadge}>
-                            {heroContent.overline} - {heroContent.issue} - {heroContent.date}
-                        </span>
-                        <p className={styles.subtitle}>{heroContent.subtitle}</p>
+                <div className={styles.heroText}>
+                    <span className={styles.heroBadge}>
+                        {heroContent.overline} - {heroContent.issue} - {heroContent.date}
+                    </span>
+                    <span className={styles.issueTheme}>{heroContent.title}</span>
 
-                        <div className={styles.actions}>
-                            <a href={heroContent.primaryAction.href} className={`btn btn-primary ${styles.ctaBtn}`}>
-                                {heroContent.primaryAction.label}
-                            </a>
-                            <a
-                                href={heroContent.secondaryAction.href}
-                                className={`btn btn-outline ${styles.ctaOutline}`}
-                            >
-                                {heroContent.secondaryAction.label}
-                            </a>
-                        </div>
-                    </div>
+                    <h1 className={styles.hugeTitle}>
+                        <span className={styles.titleLine1}>Empowering</span>
+                        <span className={styles.titleLine2}>Leaders.</span>
+                    </h1>
 
-                    <div className={styles.titleCol}>
-                        <h1 className={styles.hugeTitle}>
-                            <span className={styles.titleLine1}>Empowering</span>
-                            <span className={styles.titleLine2}>Leaders.</span>
-                        </h1>
-                        <span className={styles.titleAccent}>Chapter, voices, and impact in motion.</span>
+                    <span className={styles.titleAccent}>Chapter, voices, and impact in motion.</span>
+                    <p className={styles.subtitle}>{heroContent.subtitle}</p>
+
+                    <div className={styles.actions}>
+                        <a href={heroContent.primaryAction.href} className={`btn btn-primary ${styles.ctaBtn}`}>
+                            {heroContent.primaryAction.label}
+                        </a>
+                        <a
+                            href={heroContent.secondaryAction.href}
+                            className={`btn btn-outline ${styles.ctaOutline}`}
+                        >
+                            {heroContent.secondaryAction.label}
+                        </a>
                     </div>
                 </div>
 

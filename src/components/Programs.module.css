@@ -1,22 +1,25 @@
 .programs {
+    position: relative;
     padding: var(--section-padding) 0;
-    background: #fbfaf7;
+    background:
+        radial-gradient(circle at top right, rgba(10, 25, 47, 0.05) 0%, transparent 24%),
+        linear-gradient(180deg, #fbfaf7 0%, #f4efe7 100%);
 }
 
 .header {
-    max-width: 50rem;
+    max-width: 52rem;
     margin-bottom: 3rem;
 }
 
 .header h2 {
-    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
     text-transform: none;
 }
 
 .intro {
     margin-top: 1rem;
     font-size: 1.08rem;
-    line-height: 1.8;
+    line-height: 1.84;
 }
 
 .projectList {
@@ -26,11 +29,11 @@
 
 .project {
     display: grid;
-    grid-template-columns: minmax(260px, 0.9fr) 1.1fr;
+    grid-template-columns: minmax(280px, 0.92fr) 1.08fr;
     gap: 0;
-    background: white;
+    background: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(10, 25, 47, 0.08);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
     overflow: hidden;
 }
 
@@ -39,7 +42,9 @@
 }
 
 .media {
+    position: relative;
     background: #efe8df;
+    min-height: 100%;
 }
 
 .projectImage {
@@ -47,12 +52,17 @@
     height: 100%;
     min-height: 100%;
     object-fit: cover;
+    transition: transform var(--transition-smooth);
+}
+
+.project:hover .projectImage {
+    transform: scale(1.03);
 }
 
 .placeholder {
-    min-height: 19rem;
+    min-height: 21rem;
     display: grid;
-    align-content: center;
+    align-content: end;
     gap: 0.5rem;
     padding: 2rem;
     background: linear-gradient(135deg, var(--jci-navy) 0%, var(--jci-maroon) 100%);
@@ -76,6 +86,7 @@
 
 .body {
     display: grid;
+    align-content: start;
     gap: 1rem;
     padding: 2rem;
 }
@@ -84,31 +95,32 @@
     color: var(--jci-maroon);
     font-family: var(--font-heading);
     font-size: 0.8rem;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 0.14em;
     text-transform: uppercase;
 }
 
 .body h3 {
-    font-size: clamp(1.9rem, 4vw, 2.8rem);
+    font-size: clamp(2rem, 4vw, 2.95rem);
+    line-height: 0.98;
     text-transform: none;
 }
 
 .summary {
     font-family: var(--font-display);
-    font-size: 1.5rem;
-    line-height: 1.45;
+    font-size: 1.45rem;
+    line-height: 1.48;
     color: var(--jci-navy);
 }
 
 .detailStack {
     display: grid;
-    gap: 0.8rem;
+    gap: 0.82rem;
 }
 
 .detailStack p {
     font-size: 1rem;
-    line-height: 1.75;
+    line-height: 1.78;
 }
 
 .highlights {
@@ -116,15 +128,16 @@
     flex-wrap: wrap;
     gap: 0.75rem;
     list-style: none;
+    margin-top: 0.3rem;
 }
 
 .highlights li {
-    padding: 0.55rem 0.8rem;
+    padding: 0.58rem 0.85rem;
     background: rgba(10, 25, 47, 0.05);
     color: var(--jci-navy);
     font-family: var(--font-heading);
-    font-size: 0.76rem;
-    font-weight: 700;
+    font-size: 0.74rem;
+    font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
@@ -134,8 +147,8 @@
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    margin-top: 2rem;
-    padding-top: 1.5rem;
+    margin-top: 2.2rem;
+    padding: 1.6rem 1.8rem 0;
     border-top: 1px solid rgba(10, 25, 47, 0.1);
 }
 
@@ -173,5 +186,7 @@
     .footerNote {
         flex-direction: column;
         align-items: flex-start;
+        padding-left: 0;
+        padding-right: 0;
     }
 }

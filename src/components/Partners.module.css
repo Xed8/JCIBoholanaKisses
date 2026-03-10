@@ -1,11 +1,14 @@
 .partners {
     padding-bottom: var(--section-padding);
-    background: #f6f4ef;
+    background: linear-gradient(180deg, #f3eee6 0%, #fffdfa 100%);
 }
 
 .band {
-    padding: 5rem 0 8rem;
-    background: var(--jci-navy);
+    position: relative;
+    padding: 5rem 0 8.5rem;
+    background:
+        radial-gradient(circle at top right, rgba(212, 168, 67, 0.14) 0%, transparent 24%),
+        linear-gradient(180deg, rgba(10, 25, 47, 0.98) 0%, rgba(17, 34, 64, 0.98) 100%);
 }
 
 .header {
@@ -14,18 +17,18 @@
 
 .header h2 {
     color: white;
-    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
     text-transform: none;
 }
 
 .subtitle {
     margin-top: 1rem;
     color: rgba(255, 255, 255, 0.75);
-    line-height: 1.8;
+    line-height: 1.84;
 }
 
 .inner {
-    margin-top: -4rem;
+    margin-top: -4.8rem;
 }
 
 .highlightGrid {
@@ -35,12 +38,21 @@
 }
 
 .highlightCard {
+    position: relative;
     display: grid;
-    gap: 0.75rem;
-    padding: 1.6rem;
-    background: white;
+    gap: 0.8rem;
+    padding: 1.7rem;
+    background: rgba(255, 255, 255, 0.96);
     border: 1px solid rgba(10, 25, 47, 0.08);
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-md);
+}
+
+.highlightCard::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--jci-maroon) 0%, var(--accent-gold) 100%);
 }
 
 .highlightCard h3 {
@@ -50,28 +62,29 @@
 
 .highlightCard p {
     font-size: 1rem;
-    line-height: 1.75;
+    line-height: 1.78;
 }
 
 .pillCloud {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.9rem;
+    gap: 0.85rem;
     margin-top: 1.5rem;
-    padding: 1.8rem;
-    background: rgba(255, 255, 255, 0.88);
+    padding: 1.9rem;
+    background: rgba(255, 255, 255, 0.92);
     border: 1px solid rgba(10, 25, 47, 0.08);
+    box-shadow: var(--shadow-sm);
 }
 
 .pill {
     display: inline-flex;
     align-items: center;
-    padding: 0.7rem 1rem;
-    border: 1px solid rgba(10, 25, 47, 0.12);
+    padding: 0.72rem 1rem;
+    background: rgba(10, 25, 47, 0.04);
     color: var(--jci-navy);
     font-family: var(--font-heading);
-    font-size: 0.78rem;
-    font-weight: 700;
+    font-size: 0.76rem;
+    font-weight: 800;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }

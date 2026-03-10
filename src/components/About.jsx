@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import styles from './About.module.css';
-import { chapterIntro, values } from '@/content/homeContent';
+import { chapterIntro } from '@/content/homeContent';
 
 export default function About() {
   const sectionRef = useRef(null);
@@ -66,20 +66,6 @@ export default function About() {
               </a>
             </div>
           </div>
-        </div>
-
-        <div className={styles.valuesGrid}>
-          {values.map((value, index) => (
-            <article
-              key={value.title}
-              className={`${styles.valueCard} ${styles.animateOnScroll}`}
-              style={{ transitionDelay: `${index * 0.1}s` }}
-            >
-              <span className={styles.valueIndex}>{`0${index + 1}`}</span>
-              <h3>{value.title}</h3>
-              <p>{value.description}</p>
-            </article>
-          ))}
         </div>
       </div>
     </section>

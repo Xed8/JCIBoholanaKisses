@@ -68,11 +68,9 @@ export default function Contact() {
       <div className="container">
         <div className={styles.grid}>
           <div className={styles.info}>
-            <span className={`section-label ${styles.animateOnScroll}`}>Get in Touch</span>
-            <h2 className={styles.animateOnScroll}>
-              <span style={{ color: 'var(--jci-red)' }}>Contact</span> Us
-            </h2>
-            <p className={styles.animateOnScroll} style={{ marginBottom: '2rem' }}>
+            <span className={`text-overline ${styles.animateOnScroll}`}>Get in Touch</span>
+            <h2 className={styles.animateOnScroll}>Continue the conversation.</h2>
+            <p className={`${styles.intro} ${styles.animateOnScroll}`}>
               Ready to collaborate, join, or ask about a project in the issue? Send a note and the
               chapter can continue the conversation beyond the magazine.
             </p>
@@ -125,6 +123,7 @@ export default function Contact() {
 
           <div className={`${styles.formWrapper} ${styles.animateOnScroll}`}>
             <form onSubmit={handleSubmit}>
+              <span className={styles.formLabel}>Direct Inquiry</span>
               <h3>Send a Message</h3>
               <div className={styles.formGroup}>
                 <label htmlFor="contact-name">Full Name</label>

@@ -76,7 +76,7 @@ export default function Voices() {
         <div className={styles.grid}>
           {messages.map((message, index) => (
             <article
-              key={`${message.author}-${message.sourcePage}`}
+              key={`${message.author}-${index}`}
               className={`${styles.card} ${styles.animateOnScroll}`}
               style={{ transitionDelay: `${index * 0.05}s` }}
             >
@@ -95,7 +95,7 @@ export default function Voices() {
               <p className={styles.excerpt}>{message.excerpt}</p>
 
               <details className={styles.details}>
-                <summary>Read full note</summary>
+                <summary>Read source note</summary>
                 <div className={styles.detailsBody}>
                   {message.body.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>

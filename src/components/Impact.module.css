@@ -9,15 +9,14 @@
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse at 20% 50%, rgba(140, 0, 0, 0.15) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 50%, rgba(212, 168, 67, 0.08) 0%, transparent 60%);
+        radial-gradient(ellipse at 18% 30%, rgba(140, 0, 0, 0.2) 0%, transparent 56%),
+        radial-gradient(ellipse at 84% 68%, rgba(212, 168, 67, 0.1) 0%, transparent 56%);
     pointer-events: none;
 }
 
 .content {
     position: relative;
     z-index: 2;
-    text-align: center;
 }
 
 .badge {
@@ -25,18 +24,17 @@
     align-items: center;
     gap: 10px;
     font-family: var(--font-heading);
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: var(--accent-gold);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-.badge::before,
-.badge::after {
+.badge::before {
     content: '';
-    width: 40px;
+    width: 36px;
     height: 3px;
     background: var(--accent-gold);
     border-radius: var(--radius-full);
@@ -44,9 +42,10 @@
 
 .title {
     color: white;
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-size: clamp(2.4rem, 5vw, 4rem);
     text-transform: none;
     margin-bottom: 1rem;
+    max-width: 40rem;
 }
 
 .highlight {
@@ -54,34 +53,38 @@
 }
 
 .subtitle {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: clamp(1rem, 1.5vw, 1.15rem);
-    max-width: 600px;
-    margin: 0 auto 4rem;
-    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: clamp(1rem, 1.5vw, 1.12rem);
+    max-width: 36rem;
+    margin: 0 0 3rem;
+    line-height: 1.82;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 2rem;
-    max-width: 960px;
-    margin: 0 auto;
+    gap: 1rem;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-    padding: 2.5rem 1.5rem;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: var(--radius-lg);
-    backdrop-filter: blur(8px);
+    align-items: flex-start;
+    gap: 0.9rem;
+    min-height: 13rem;
+    padding: 2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease, background var(--transition-smooth);
+}
+
+.card:first-child {
+    grid-column: span 2;
+    min-height: 15rem;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(212, 168, 67, 0.08) 100%);
 }
 
 .visible .card {
@@ -94,25 +97,25 @@
 }
 
 .card:nth-child(2) {
-    transition-delay: 0.1s;
+    transition-delay: 0.08s;
 }
 
 .card:nth-child(3) {
-    transition-delay: 0.2s;
+    transition-delay: 0.16s;
 }
 
 .card:nth-child(4) {
-    transition-delay: 0.3s;
+    transition-delay: 0.24s;
 }
 
 .card:hover {
     transform: translateY(-6px);
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.09);
 }
 
 .statNumber {
     font-family: var(--font-heading);
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(2.6rem, 5vw, 4rem);
     font-weight: 900;
     color: white;
     line-height: 1;
@@ -123,27 +126,29 @@
 }
 
 .statLabel {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: var(--accent-gold);
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.14em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1.5rem;
+    }
+
+    .card:first-child {
+        grid-column: span 2;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 520px) {
     .grid {
         grid-template-columns: 1fr;
-        gap: 1rem;
     }
 
-    .card {
-        padding: 2rem 1.5rem;
+    .card:first-child {
+        grid-column: span 1;
     }
 }

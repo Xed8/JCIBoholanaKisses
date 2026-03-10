@@ -34,6 +34,7 @@ function BoardPortrait({ member }) {
 
 export default function Leadership() {
   const sectionRef = useRef(null);
+  const boardSeatCount = boardMembers.length + 1;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -60,17 +61,48 @@ export default function Leadership() {
           <p className={`${styles.intro} ${styles.animateOnScroll}`}>{leadershipContent.intro}</p>
         </div>
 
-        <figure className={`${styles.groupFigure} ${styles.animateOnScroll}`}>
-          <img
-            src={leadershipContent.groupPhoto}
-            alt="JCI Boholana Kisses 2026 board group portrait"
-            className={styles.groupImage}
-          />
-          <figcaption className={styles.groupCaption}>
-            <strong>Batch MASARIG - PRISTINE 2026</strong>
-            <span>{leadershipContent.groupPhotoCaption}</span>
-          </figcaption>
-        </figure>
+        <div className={styles.heroLayout}>
+          <figure className={`${styles.groupFigure} ${styles.animateOnScroll}`}>
+            <img
+              src={leadershipContent.groupPhoto}
+              alt="JCI Boholana Kisses 2026 board group portrait"
+              className={styles.groupImage}
+            />
+            <figcaption className={styles.groupCaption}>
+              <span className={styles.groupCaptionLabel}>Board Portrait</span>
+              <strong>Batch MASARIG - PRISTINE 2026</strong>
+              <span>{leadershipContent.groupPhotoCaption}</span>
+            </figcaption>
+          </figure>
+
+          <section className={`${styles.boardOverview} ${styles.animateOnScroll}`}>
+            <div className={styles.boardOverviewHeader}>
+              <span className={styles.boardOverviewLabel}>Board Profile</span>
+              <h3 className={styles.boardOverviewTitle}>{leadershipContent.boardOverviewTitle}</h3>
+            </div>
+
+            <div className={styles.boardOverviewMeta}>
+              <div className={styles.metaCard}>
+                <strong>{boardSeatCount}</strong>
+                <span>Leaders</span>
+              </div>
+              <div className={styles.metaCard}>
+                <strong>2026</strong>
+                <span>Term</span>
+              </div>
+              <div className={styles.metaCard}>
+                <strong>JCI</strong>
+                <span>Network</span>
+              </div>
+            </div>
+
+            <div className={styles.boardOverviewBody}>
+              {leadershipContent.boardOverview.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </section>
+        </div>
 
         <div className={`${styles.presidentCard} ${styles.animateOnScroll}`}>
           <div className={styles.presidentPhoto}>
@@ -78,6 +110,7 @@ export default function Leadership() {
               src={leadershipContent.president.image}
               alt={leadershipContent.president.name}
             />
+            <span className={styles.presidentPhotoBadge}>PresTine 2026</span>
           </div>
           <div className={styles.presidentInfo}>
             <span className={styles.presidentRole}>{leadershipContent.president.role}</span>
@@ -86,7 +119,13 @@ export default function Leadership() {
           </div>
         </div>
 
-        <h3 className={`${styles.boardTitle} ${styles.animateOnScroll}`}>Board of Directors</h3>
+        <div className={`${styles.boardSectionHeader} ${styles.animateOnScroll}`}>
+          <h3 className={styles.boardTitle}>Board of Directors</h3>
+          <p className={styles.boardSubtitle}>
+            Executive and director roles that carry the chapter&apos;s work from membership to
+            community programs.
+          </p>
+        </div>
         <div className={styles.grid}>
           {boardMembers.map((member, index) => (
             <article
