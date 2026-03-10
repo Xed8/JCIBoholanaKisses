@@ -515,7 +515,7 @@ export const projects = prefixImagePaths([
   {
     category: 'Education',
     title: 'Bags to School',
-    image: '/images/otg/projects/bags-to-school.png',
+    image: '/images/otg/projects/bags-to-school.jpg',
     summary:
       'Implemented in June and July 2025, the national program equipped young learners in Inabanga and Calape with school bags, supplies, slippers, and feeding support.',
     body: [
