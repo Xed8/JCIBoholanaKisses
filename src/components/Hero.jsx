@@ -37,7 +37,7 @@ export default function Hero() {
                         <span className={styles.titleLine2}>Leaders.</span>
                     </h1>
 
-                    <span className={styles.titleAccent}>Chapter, voices, and impact in motion.</span>
+                    <span className={styles.titleAccent}>President&apos;s message, board leadership, and project stories.</span>
                     <p className={styles.subtitle}>{heroContent.subtitle}</p>
 
                     <div className={styles.actions}>

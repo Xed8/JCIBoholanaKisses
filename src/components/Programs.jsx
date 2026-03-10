@@ -28,11 +28,10 @@ export default function Programs() {
       <div className="container">
         <div className={styles.header}>
           <span className={`text-overline ${styles.animateOnScroll}`}>Impact Portfolio</span>
-          <h2 className={styles.animateOnScroll}>The OTG stories still moving on the ground.</h2>
+          <h2 className={styles.animateOnScroll}>Projects featured in the issue.</h2>
           <p className={`${styles.intro} ${styles.animateOnScroll}`}>
-            The magazine becomes a web portfolio here: service stories, public health work,
-            national hosting, and education initiatives translated into a browsable chapter
-            archive.
+            These project pages cover education, community relations, public health, national
+            hosting, compassion, literacy, and culture in the chapter&apos;s 2025 work.
           </p>
         </div>
 
@@ -78,7 +77,7 @@ export default function Programs() {
         </div>
 
         <div className={`${styles.footerNote} ${styles.animateOnScroll}`}>
-          <p>Follow the chapter on Facebook for updates beyond the OTG issue archive.</p>
+          <p>Follow the chapter on Facebook for updates beyond the projects featured in the issue.</p>
           <a
             href="https://www.facebook.com/JCIBoholanaKisses"
             target="_blank"

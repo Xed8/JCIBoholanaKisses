@@ -16,7 +16,7 @@ export const heroContent = prefixImagePaths({
   overline: 'ON THE GO magazine',
   title: 'PresTine',
   subtitle:
-    'A souvenir issue shaped around PRISTINE leadership, chapter legacy, and the service stories JCI Boholana Kisses is carrying into 2026.',
+    "Issue No. 12 gathers the president's message, the 2026 board, chapter voices, and the featured project stories carried in the souvenir issue.",
   primaryAction: { label: 'Read the issue online', href: '#about' },
   secondaryAction: { label: 'Meet the board', href: '#leadership' },
   coverImage: '/images/otg/cover/pres-tine-front-cover.jpg',
@@ -24,18 +24,18 @@ export const heroContent = prefixImagePaths({
 
 export const chapterIntro = prefixImagePaths({
   eyebrow: 'The Chapter',
-  title: 'An all women-LGBTQ++ chapter building leaders who serve with clarity, compassion, and courage.',
+  title: 'PRISTINE Leadership: Leading with Purpose and Integrity.',
   intro: [
-    'JCI Boholana Kisses is a local organization under Junior Chamber International that gives empowered women leaders a place to build skills, strengthen networks, and create positive change in their communities.',
-    'Its work combines leadership development, community service, and social initiatives so members grow while responding to real needs across Bohol.',
+    'JCI Boholana Kisses has always been a community of empowered women dedicated to leadership development, community service, and nation-building. Through the years, our organization has proven that when passionate leaders come together, remarkable things happen.',
+    'As we begin a new chapter, PRISTINE calls us to elevate our commitment to serve with integrity, collaborate with purpose, and lead with authenticity. Under this call to action, we aim to strengthen our programs, empower our members, and deepen our impact in the communities we serve.',
   ],
   pullQuote:
-    'Service to humanity is the best work of life, and every chapter activity is designed to turn that principle into visible action.',
-  presidentNoteTitle: 'PRISTINE leadership',
+    'Together, let us lead with clarity, serve with purpose, and create a future that is truly PRISTINE.',
+  presidentNoteTitle: 'From the President',
   presidentNote:
-    'President Ma. Christine O. Torralba frames 2026 around PRISTINE leadership: purposeful service, refined execution, and impact that stays rooted in integrity.',
+    'Every project, every initiative, and every partnership will reflect the essence of PRISTINE leadership: intentional, meaningful, and sustainable.',
   presidentExcerpt:
-    'Leadership is not merely about holding a title. It is about inspiring others, creating meaningful impact, and leaving every space better than we found it.',
+    'PRISTINE is more than a theme; it is a mindset.',
   featureImage: '/images/otg/leadership/president-pristine.jpg',
 });
 
@@ -58,9 +58,9 @@ export const values = [
 
 export const valuesPage = {
   eyebrow: 'JCI Values',
-  title: 'The creed, mission, and vision that frame the issue.',
+  title: 'JCI Values, Mission, and Vision.',
   intro:
-    'This section anchors the magazine in the JCI belief system before the chapter story begins: six shared convictions, a leadership mission, and a long-view vision for the movement.',
+    "The issue presents the official JCI values together with the organization's mission and vision.",
   beliefs: [
     'We believe that faith in God gives meaning and purpose to human life.',
     'That the brotherhood of man transcends the sovereignty of nations.',
@@ -90,44 +90,11 @@ export const jciOverview = {
 };
 
 export const legacyContent = {
-  eyebrow: 'Legacy',
-  title: 'Seventeen years of sisterhood, service, and chapter memory.',
+  eyebrow: 'Past Presidents',
+  title: 'The presidents recognized in the issue.',
   intro:
-    'The OTG issue anchors 2026 in history: from the chapter founding and charter years to a line of past presidents who shaped the culture of service that the current board inherits.',
+    'The OTG spread honors the chapter presidents who served from 2009-2010 through 2024-2025.',
 };
-
-export const milestones = [
-  {
-    year: '2009',
-    title: 'Chapter founded',
-    description:
-      'JCI Boholana Kisses was founded on September 13, 2009 in Tagbilaran City as a pioneering all women and LGBTQ++ inclusive chapter.',
-  },
-  {
-    year: '2010',
-    title: 'Officially chartered',
-    description:
-      'The chapter received its official charter on March 21, 2010, formalizing its place in JCI Philippines.',
-  },
-  {
-    year: '2024',
-    title: 'Visayas leadership stage',
-    description:
-      'The chapter helped bring Bohol to the forefront by hosting the 44th Visayas Area Conference and sustaining strong regional visibility.',
-  },
-  {
-    year: '2025',
-    title: 'ON THE GO returns',
-    description:
-      'The chapter published a new souvenir issue and carried major education, health, and community outreach projects across Bohol.',
-  },
-  {
-    year: '2026',
-    title: 'PRISTINE year',
-    description:
-      'The 2026 board opens a new chapter centered on clarity, collaboration, and impact-led programming.',
-  },
-];
 
 export const pastPresidents = prefixImagePaths([
   {
@@ -211,7 +178,7 @@ export const impactStats = [
   { value: 323, suffix: '+', label: 'Youth Served' },
   { value: 16, suffix: '', label: 'Years Since Charter' },
   { value: 16, suffix: '', label: 'Board Leaders' },
-  { value: 7, suffix: '', label: 'OTG Impact Stories' },
+  { value: 7, suffix: '', label: 'Featured Projects' },
 ];
 
 export const presidentFeature = prefixImagePaths({
@@ -221,7 +188,7 @@ export const presidentFeature = prefixImagePaths({
   byline: 'By Ma. Christine O. Torralba',
   image: '/images/otg/leadership/president-pristine.jpg',
   pullQuote: 'PRISTINE is more than a theme; it is a mindset.',
-  pillars: ['Clarity', 'Integrity', 'Purpose', 'Sustainable Impact'],
+  pillars: ['Pure in intention', 'Refined in action', 'Transformative in impact', 'Lead with authenticity'],
   paragraphs: [
     'Leadership is not merely about holding a title. It is about creating meaningful impact, inspiring others, and leaving every space better than we found it. As I humbly accept the responsibility of serving as the Incoming President of JCI Boholana Kisses, I am guided by a vision that reflects clarity, excellence, and purposeful service: PRISTINE.',
     'PRISTINE represents the standard of leadership and service we aspire to uphold: pure in intention, refined in action, and transformative in impact. In a world filled with challenges and opportunities, young leaders must remain grounded in values while courageously stepping forward to create change.',
@@ -234,7 +201,7 @@ export const presidentFeature = prefixImagePaths({
 
 export const leadershipContent = prefixImagePaths({
   eyebrow: 'Leadership',
-  title: 'The PRISTINE 2026 board of directors.',
+  title: '2026 Board of Directors',
   intro:
     'The Board of Directors of JCI Boholana Kisses is composed of passionate and committed leaders who guide the organization in fulfilling its mission of creating positive change in the community.',
   groupPhoto: '/images/photos-grid.jpg',
@@ -252,7 +219,7 @@ export const leadershipContent = prefixImagePaths({
     role: 'President',
     image: '/images/otg/leadership/president-pristine.jpg',
     description:
-      'Under the PresTine banner, the chapter enters 2026 with a leadership agenda grounded in integrity, polished execution, and service that leaves communities better than it found them.',
+      'Under this call to action, we aim to strengthen our programs, empower our members, and deepen our impact in the communities we serve.',
   },
 });
 
@@ -590,13 +557,13 @@ export const projects = prefixImagePaths([
     image: null,
     placeholderLabel: 'Bohol takes the national stage',
     summary:
-      'Tagbilaran City hosted the National Launching of JCI Week 2025 for the first time in the chapter\'s history under the banner "Bohol Nasad Ta Bai!"',
+      'The "Land of the Chocolate Hills" took center stage in April 2025 as JCI Boholana Kisses hosted the National Launching of JCI Week for the first time in the chapter\'s history under the banner "Bohol Nasad Ta Bai!"',
     body: [
-      'JCI Boholana Kisses worked with JCI Bohol Sandugo, JCI Bohol Limestone, and JCI Chocolate Hills to mount the national kickoff, with Sean Hene serving as National Launching Project Chairperson.',
-      'The day moved from a Holy Mass at St. Joseph Cathedral to a motorcade through Tagbilaran and an official City Hall program with Mayor Jane C. Yap, a ceremonial ribbon cutting, and a national livestream on the JCI Philippines Facebook page.',
-      'National President Thirdie Chua, an Autism Awareness Couch Talk, the ONCD segment, and Regional Vice President Deb Jomarleh Ucang\'s closing message turned the launch into more than ceremony: it became a visible national platform for local leadership.',
+      'The milestone was made possible through the collaboration of JCI Boholana Kisses, JCI Bohol Sandugo, JCI Bohol Limestone, and JCI Chocolate Hills, with Sean Hene serving as National Launching Project Chairperson and helping coordinate between the national leadership and the local organizing teams.',
+      'The day began with a 7:30 AM Holy Mass at St. Joseph Cathedral, followed by a 9:00 AM motorcade along J.A. Clarin Street to Tagbilaran City Hall. The 10:00 AM official program carried the National Anthem, the JCI Creed, welcoming remarks from Mayor Jane C. Yap, a ceremonial ribbon cutting, and a nationwide livestream on the official JCI Philippines Facebook page.',
+      'National President Thirdie Chua delivered the message, followed by a Couch Talk on Autism Awareness for World Autism Month, the ONCD segment, and Regional Vice President Deb Jomarleh Ucang\'s closing message. The morning concluded with fellowship and lunch at Dao Diamond Hotel and Restaurant, showing how local chapters can work together to deliver an initiative with national reach.',
     ],
-    highlights: ['First JCI Week national launch hosted by the chapter', 'Mayor Jane C. Yap and national livestream', 'Thirdie Chua and Deb Jomarleh Ucang on program'],
+    highlights: ['First national JCI Week launch hosted by the chapter', 'Four Bohol JCI chapters mounted the kickoff', 'City Hall program, livestream, and Dao Diamond fellowship'],
   },
   {
     category: 'Compassion',
@@ -614,7 +581,7 @@ export const projects = prefixImagePaths([
   {
     category: 'Education and Literacy',
     title: 'Tabula Rasa',
-    image: null,
+    image: '/images/otg/projects/tabula-rasa.png',
     placeholderLabel: 'From empty slate to literate',
     summary:
       'Project Tabula Rasa is the chapter\'s education initiative for inclusive and accessible education through the creation of libraries in rural communities in Bohol.',
@@ -642,41 +609,39 @@ export const projects = prefixImagePaths([
 
 export const networkContent = {
   eyebrow: 'Partners and Network',
-  title: 'Relationships that keep the chapter connected across the movement.',
+  title: 'Chapter relationships represented in the issue.',
   intro:
-    'Without bringing in commercial sponsors, this pass keeps the network section focused on JCI relationships: father chapter roots, sister chapter solidarity, and the inter-chapter collaborations that continue to sustain Boholana Kisses.',
+    'The issue pages collect messages from the father chapter, sister chapters, and peer chapters across Bohol, Cebu, Davao, Makati, Mandaue, San Pablo, and Surigao.',
 };
 
 export const networkHighlights = [
   {
     title: 'Father chapter support',
     description:
-      'JCI Bohol Sandugo remains a visible anchor in the chapter story and in the OTG messages collected for this issue.',
+      'JCI Bohol Sandugo appears as the father chapter and sends its own message of support to the 2026 board.',
   },
   {
-    title: 'Visayas sisterhood',
+    title: 'Pages 13 to 15 voices',
     description:
-      'Messages from Cebu, Metro Cebu Uptown, Cebu-Mactan Channel, and San Pablo 7 Lakes emphasize shared growth, mentorship, and camaraderie.',
+      'The sister chapter pages carry messages from Angeles City Culiat, Metro Cebu Uptown, Surigao Nickel, Cebu, Davao, Makati, Mandaue, Cebu-Mactan Channel, San Pablo 7 Lakes, and Surigao North.',
   },
   {
-    title: 'National chapter ties',
+    title: 'Wider JCI links',
     description:
-      'The issue reflects strong chapter-to-chapter relationships that stretch from Bohol to Angeles City, Surigao, and beyond.',
+      'Together, these messages show how the chapter stays connected to the wider JCI movement beyond Bohol.',
   },
 ];
 
 export const partnerChapters = [
   'JCI Bohol Sandugo',
-  'JCI Cebu',
-  'JCI Metro Cebu Uptown',
-  'JCI Cebu-Mactan Channel',
-  'JCI San Pablo 7 Lakes',
-  'JCI Surigao North',
-  'JCI Surigao Nickel',
   'JCI Angeles City Culiat',
+  'JCI Metro Cebu Uptown',
+  'JCI Surigao Nickel',
+  'JCI Cebu',
   'JCI Davao',
   'JCI Makati',
   'JCI Mandaue',
-  'JCI Tanauan Pasaka',
-  'JCI Bataan',
+  'JCI Cebu-Mactan Channel',
+  'JCI San Pablo 7 Lakes',
+  'JCI Surigao North',
 ];

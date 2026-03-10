@@ -59,9 +59,8 @@ export default function Voices() {
           <span className={`text-overline ${styles.animateOnScroll}`}>Voices</span>
           <h2 className={styles.animateOnScroll}>Messages carried into the 2026 issue.</h2>
           <p className={`${styles.intro} ${styles.animateOnScroll}`}>
-            The OTG issue turns the homepage into a chapter conversation. National officers, father
-            chapter leaders, and sister chapters frame the year with support, challenge, and
-            encouragement.
+            The issue gathers messages from JCI Philippines officers, the father chapter, and
+            sister chapters across Cebu, Davao, Makati, Mandaue, San Pablo, and Surigao.
           </p>
         </div>
 

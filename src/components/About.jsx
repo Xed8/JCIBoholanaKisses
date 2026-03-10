@@ -61,8 +61,8 @@ export default function About() {
               <span className={styles.noteLabel}>{chapterIntro.presidentNoteTitle}</span>
               <p className={styles.noteLead}>{chapterIntro.presidentNote}</p>
               <p className={styles.noteExcerpt}>{chapterIntro.presidentExcerpt}</p>
-              <a href="#voices" className={`btn btn-primary ${styles.noteAction}`}>
-                Read chapter messages
+              <a href="#president-message" className={`btn btn-primary ${styles.noteAction}`}>
+                Read president message
               </a>
             </div>
           </div>

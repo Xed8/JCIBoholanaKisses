@@ -59,11 +59,10 @@ export default function Partners() {
           <div className={styles.networkPanel}>
             <div className={styles.networkHeader}>
               <span className={styles.networkLabel}>Chapter Network</span>
-              <h3>Movement relationships represented throughout the issue.</h3>
+              <h3>Chapter names that appear in the message pages.</h3>
               <p>
-                This section focuses on chapter-to-chapter ties across the JCI movement, from
-                father chapter roots to the broader sisterhood and national connections sustained by
-                Boholana Kisses.
+                This list follows the actual organizations represented in the issue&apos;s father
+                chapter and sister chapter messages.
               </p>
             </div>
 

@@ -39,7 +39,7 @@ export default function ValuesSection() {
           >
             <span className={styles.summaryLabel}>Core Frame</span>
             <strong>Belief. Mission. Vision.</strong>
-            <p>The issue starts by making the chapter story answer to a larger JCI standard.</p>
+            <p>The page presents the official JCI values, mission, and vision.</p>
           </div>
         </div>
 

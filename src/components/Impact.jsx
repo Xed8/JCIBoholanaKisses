@@ -75,8 +75,8 @@ export default function Impact() {
               The numbers behind this <span className={styles.highlight}>issue.</span>
             </h2>
             <p className={styles.subtitle}>
-              These markers connect the chapter&apos;s service footprint, leadership scale, and OTG
-              story count to the work highlighted across the homepage.
+              These markers are drawn from the issue&apos;s service counts, chapter age, board roster,
+              and featured project set.
             </p>
           </div>
 
@@ -84,7 +84,7 @@ export default function Impact() {
             <span className={styles.summaryLabel}>At a Glance</span>
             <strong className={styles.summaryValue}>{impactStats.length} chapter markers</strong>
             <p className={styles.summaryText}>
-              Service reach, chapter longevity, board scale, and OTG story count in one view.
+              Service reach, chapter longevity, board scale, and project coverage in one view.
             </p>
           </aside>
         </div>
@@ -106,8 +106,7 @@ export default function Impact() {
             <div className={styles.featureBody}>
               <span className={styles.featureLabel}>{featuredStat.label}</span>
               <p className={styles.featureText}>
-                The clearest quantified marker of the chapter&apos;s visible community reach in this
-                issue.
+                A count drawn from the project pages featured in the issue.
               </p>
             </div>
           </article>
