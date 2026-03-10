@@ -153,6 +153,7 @@
 .titleLine1 {
     color: transparent;
     -webkit-text-stroke: 2px rgba(255, 255, 255, 0.8);
+    font-family: var(--font-display);
     margin-left: -5vw;
 }
 

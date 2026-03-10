@@ -1,21 +1,22 @@
 'use client';
 
 import styles from './Hero.module.css';
-import heroBgImg from '../../public/images/group-photo.jpg';
-import coverImg from '../../public/images/cover.jpg';
 import { heroContent, impactStats } from '@/content/homeContent';
+import { withBasePath } from '@/lib/assetPath';
 
 export default function Hero() {
     const heroStats = [impactStats[0], impactStats[1], impactStats[3]];
+    const heroBgSrc = withBasePath('/images/group-photo.jpg');
+    const heroFallbackSrc = withBasePath('/images/cover.jpg');
 
     return (
         <section id="home" className={styles.hero}>
             <div className={styles.heroBg}>
                 <img
-                    src={heroBgImg.src}
+                    src={heroBgSrc}
                     onError={(event) => {
                         event.target.onerror = null;
-                        event.target.src = coverImg.src;
+                        event.target.src = heroFallbackSrc;
                     }}
                     alt="JCI Boholana Kisses Chapter Members"
                     className={styles.heroBgImg}

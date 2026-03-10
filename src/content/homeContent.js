@@ -1,3 +1,5 @@
+import { prefixImagePaths } from '@/lib/assetPath';
+
 export const navigationLinks = [
   { label: 'Cover', href: '#home' },
   { label: 'Chapter', href: '#about' },
@@ -7,7 +9,7 @@ export const navigationLinks = [
   { label: 'Network', href: '#partners' },
 ];
 
-export const heroContent = {
+export const heroContent = prefixImagePaths({
   issue: 'Issue No. 12',
   date: 'March 2026',
   overline: 'ON THE GO magazine',
@@ -17,9 +19,9 @@ export const heroContent = {
   primaryAction: { label: 'Read the issue online', href: '#about' },
   secondaryAction: { label: 'Meet the board', href: '#leadership' },
   coverImage: '/images/otg/cover/pres-tine-front-cover.jpg',
-};
+});
 
-export const chapterIntro = {
+export const chapterIntro = prefixImagePaths({
   eyebrow: 'The Chapter',
   title: 'An all women-LGBTQ++ chapter building leaders who serve with clarity, compassion, and courage.',
   intro: [
@@ -34,7 +36,7 @@ export const chapterIntro = {
   presidentExcerpt:
     'Leadership is not merely about holding a title. It is about inspiring others, creating meaningful impact, and leaving every space better than we found it.',
   featureImage: '/images/otg/leadership/president-pristine.jpg',
-};
+});
 
 export const values = [
   {
@@ -117,7 +119,7 @@ export const impactStats = [
   { value: 7, suffix: '', label: 'OTG Impact Stories' },
 ];
 
-export const leadershipContent = {
+export const leadershipContent = prefixImagePaths({
   eyebrow: 'Leadership',
   title: 'The PRISTINE 2026 board of directors.',
   intro:
@@ -132,9 +134,9 @@ export const leadershipContent = {
     description:
       'Under the PresTine banner, the chapter enters 2026 with a leadership agenda grounded in integrity, polished execution, and service that leaves communities better than it found them.',
   },
-};
+});
 
-export const boardMembers = [
+export const boardMembers = prefixImagePaths([
   {
     name: 'Zoila Jean Cenabre',
     role: 'Immediate Past President',
@@ -210,11 +212,11 @@ export const boardMembers = [
     role: 'Director for Internationalism',
     image: '/images/otg/leadership/christine-marie-lanada.jpg',
   },
-];
+]);
 
 export const printOnlyMessages = [];
 
-export const messages = [
+export const messages = prefixImagePaths([
   {
     sourcePage: 'Page 11',
     category: 'National Message',
@@ -330,7 +332,7 @@ export const messages = [
     author: 'Daryl Nino T. Jabil',
     role: 'JCI Cebu',
     chapter: 'Sister Chapter',
-    image: '/images/otg/messages/daryl-jabil.jpg',
+    image: null,
     excerpt:
       'Under the banner of PresTine, may your year be defined by clarity, excellence, and meaningful impact.',
     body: [
@@ -418,9 +420,9 @@ export const messages = [
       'The Surigao North message turns the sister chapter bond into emotional support, speaking directly to the strain of the term and the value of community behind the title.',
     ],
   },
-];
+]);
 
-export const projects = [
+export const projects = prefixImagePaths([
   {
     sourcePage: 'Page 16',
     category: 'Education',
@@ -516,7 +518,7 @@ export const projects = [
     ],
     highlights: ['February 20, 2025 in Cortes, Bohol', 'National Museum of the Philippines-Bohol partnership', 'Book reading, puzzles, coloring, and sketching'],
   },
-];
+]);
 
 export const networkContent = {
   eyebrow: 'Partners and Network',

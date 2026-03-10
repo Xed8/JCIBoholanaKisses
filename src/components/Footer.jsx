@@ -1,12 +1,13 @@
 import styles from './Footer.module.css';
-import logoImg from '../../public/images/logo.jpg';
 import { navigationLinks, projects } from '@/content/homeContent';
+import { withBasePath } from '@/lib/assetPath';
 
 const quickLinks = [...navigationLinks, { label: 'Contact', href: '#contact' }];
 const featuredStories = projects.slice(0, 4);
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const logoSrc = withBasePath('/images/logo.jpg');
 
   return (
     <footer className={styles.footer}>
@@ -14,7 +15,7 @@ export default function Footer() {
         <div className={styles.grid}>
           <div className={styles.brand}>
             <div className={styles.logo}>
-              <img src={logoImg.src} alt="JCI Boholana Kisses" className={styles.logoImg} />
+              <img src={logoSrc} alt="JCI Boholana Kisses" className={styles.logoImg} />
               <div>
                 <span className={styles.logoName}>JCI Boholana Kisses</span>
                 <span className={styles.logoTagline}>Developing leaders for a changing world.</span>

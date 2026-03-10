@@ -2,13 +2,14 @@
 
 import { useEffect, useState } from 'react';
 import styles from './Navbar.module.css';
-import logoImg from '../../public/images/logo.jpg';
 import { navigationLinks } from '@/content/homeContent';
+import { withBasePath } from '@/lib/assetPath';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const logoSrc = withBasePath('/images/logo.jpg');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,7 +45,7 @@ export default function Navbar() {
     <nav className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.navContainer}`}>
         <a href="#home" className={styles.logo} onClick={(event) => handleLinkClick(event, '#home')}>
-          <img src={logoImg.src} alt="JCI Boholana Kisses Logo" className={styles.logoImg} />
+          <img src={logoSrc} alt="JCI Boholana Kisses Logo" className={styles.logoImg} />
           <div className={styles.logoText}>
             <span className={styles.logoName}>JCI Boholana Kisses</span>
           </div>
