@@ -28,6 +28,8 @@ function MessagePortrait({ message }) {
       src={message.image}
       alt={message.author}
       className={styles.cardImage}
+      loading="lazy"
+      decoding="async"
       onError={() => setHasError(true)}
     />
   );

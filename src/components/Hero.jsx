@@ -6,7 +6,7 @@ import { withBasePath } from '@/lib/assetPath';
 
 export default function Hero() {
     const heroStats = [impactStats[0], impactStats[1], impactStats[3]];
-    const heroBgSrc = withBasePath('/images/group-photo.jpg');
+    const heroBgSrc = withBasePath('/images/group-photo-hero.jpg');
     const heroFallbackSrc = withBasePath('/images/cover.jpg');
 
     return (
@@ -14,6 +14,9 @@ export default function Hero() {
             <div className={styles.heroBg}>
                 <img
                     src={heroBgSrc}
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
                     onError={(event) => {
                         event.target.onerror = null;
                         event.target.src = heroFallbackSrc;

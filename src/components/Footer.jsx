@@ -15,7 +15,7 @@ export default function Footer() {
         <div className={styles.grid}>
           <div className={styles.brand}>
             <div className={styles.logo}>
-              <img src={logoSrc} alt="JCI Boholana Kisses" className={styles.logoImg} />
+              <img src={logoSrc} alt="JCI Boholana Kisses" className={styles.logoImg} loading="lazy" decoding="async" />
               <div>
                 <span className={styles.logoName}>JCI Boholana Kisses</span>
                 <span className={styles.logoTagline}>Developing leaders for a changing world.</span>

@@ -54,6 +54,8 @@ export default function About() {
               <img
                 src={chapterIntro.featureImage}
                 alt="President Christine Torralba portrait from the OTG issue"
+                loading="lazy"
+                decoding="async"
               />
             </figure>
 

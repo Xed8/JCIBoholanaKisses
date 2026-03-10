@@ -31,6 +31,8 @@ function BoardPortrait({
       src={member.image}
       alt={member.name}
       className={photoClassName}
+      loading="lazy"
+      decoding="async"
       onError={() => setHasError(true)}
     />
   );
@@ -71,6 +73,8 @@ export default function Leadership() {
               src={leadershipContent.groupPhoto}
               alt="JCI Boholana Kisses 2026 board of directors"
               className={styles.groupImage}
+              loading="lazy"
+              decoding="async"
             />
             <figcaption className={styles.groupCaption}>
               <span className={styles.groupCaptionLabel}>Board Portrait</span>
@@ -113,6 +117,8 @@ export default function Leadership() {
             <img
               src={leadershipContent.president.image}
               alt={leadershipContent.president.name}
+              loading="lazy"
+              decoding="async"
             />
             <span className={styles.presidentPhotoBadge}>PresTine 2026</span>
           </div>

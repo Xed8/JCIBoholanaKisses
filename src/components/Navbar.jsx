@@ -62,7 +62,7 @@ export default function Navbar() {
 
       <div className={`container ${styles.navContainer}`}>
         <a href="#home" className={styles.logo} onClick={(event) => handleLinkClick(event, '#home')}>
-          <img src={logoSrc} alt="JCI Boholana Kisses Logo" className={styles.logoImg} />
+          <img src={logoSrc} alt="JCI Boholana Kisses Logo" className={styles.logoImg} decoding="async" />
           <div className={styles.logoText}>
             <span className={styles.logoName}>JCI Boholana Kisses</span>
           </div>

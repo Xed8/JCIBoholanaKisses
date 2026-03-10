@@ -46,7 +46,13 @@ export default function Programs() {
             >
               <div className={styles.media}>
                 {project.image ? (
-                  <img src={project.image} alt={project.title} className={styles.projectImage} />
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className={styles.projectImage}
+                    loading="lazy"
+                    decoding="async"
+                  />
                 ) : (
                   <div className={styles.placeholder}>
                     <span>{project.category}</span>

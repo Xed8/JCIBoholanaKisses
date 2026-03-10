@@ -28,7 +28,13 @@ export default function PresidentFeature() {
       <div className="container">
         <div className={styles.layout}>
           <figure className={`${styles.photoCard} ${styles.animateOnScroll}`}>
-            <img src={presidentFeature.image} alt={presidentFeature.byline} className={styles.photo} />
+            <img
+              src={presidentFeature.image}
+              alt={presidentFeature.byline}
+              className={styles.photo}
+              loading="lazy"
+              decoding="async"
+            />
             <figcaption className={styles.caption}>
               <span>{presidentFeature.eyebrow}</span>
               <strong>{presidentFeature.byline}</strong>
